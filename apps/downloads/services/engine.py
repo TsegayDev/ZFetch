@@ -29,30 +29,31 @@ class DownloadEngine:
     # ──────────────────────────────────────────────────────────────────────────
 
     @staticmethod
-    def _player_client(has_cookies: bool) -> str:
+    def _player_client_chain(has_cookies: bool) -> List[str]:
         """
-        Choose the best YouTube player-client based on auth mode.
-
-        Without cookies → android
-            The Android client hits a private API that needs no JS challenge
-            and no login. Fast and reliable for public videos.
-
-        With cookies → web
-            The web client honours cookies for auth.
+        Choose the best YouTube player-client chain.
+        
+        To bypass modern datacenter-level throttling (limiting 'web' to progressive 360p)
+        and avoid Android's 'SABR-only' streaming format skips, we prioritize the 
+        'android_vr' client.
+        
+        The 'android_vr' client behaves reliably on cloud servers, bypasses SABR skips, 
+        and extracts the full set of DASH formats (1080p, 720p, audio-only) without issues.
         """
-        return 'web' if has_cookies else 'android'
+        if has_cookies:
+            # Try android_vr first to extract DASH formats securely on datacenter IPs,
+            # then standard android/ios, and finally 'web' as a last resort.
+            return ['android_vr', 'android', 'ios', 'web']
+        else:
+            return ['android_vr', 'android', 'ios']
 
     def analyze_info(self, url: str, cookies_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Extracts complete video metadata using the yt-dlp Python API.
         No file is downloaded. Returns the raw info dict.
-
-        Uses the android player client for anonymous requests (avoids JS
-        challenges) and the web client when cookies are supplied.
-        Automatically falls back to the android client if web+cookies fails.
         """
         has_cookies = bool(cookies_path and os.path.exists(cookies_path))
-        client = self._player_client(has_cookies)
+        client_chain = self._player_client_chain(has_cookies)
 
         ydl_opts = {
             'quiet': True,
@@ -60,31 +61,38 @@ class DownloadEngine:
             'noplaylist': True,
             'socket_timeout': 15,
             'extract_flat': False,  # We want full format list
-            'extractor_args': {'youtube': {'player_client': [client]}},
+            'extractor_args': {'youtube': {'player_client': client_chain}},
         }
         if has_cookies:
             ydl_opts['cookiefile'] = cookies_path
 
-        logger.info(f"Extracting info (Python API, client={client}) for URL: {url}")
+        logger.info(f"Extracting info (Python API, client_chain={client_chain}) for URL: {url}")
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(url, download=False)
+            
+            # Check if the extracted formats are restricted (fewer than or equal to 2 formats)
+            formats = info.get('formats', [])
+            if len(formats) <= 2:
+                raise Exception("Throttled format list returned")
+                
             return info
         except Exception as first_exc:
-            # If web client with cookies failed, retry with android client
-            if has_cookies:
-                logger.warning(
-                    f"Web client extraction failed ({first_exc}); "
-                    "retrying with android client (no cookies)."
-                )
-                fallback_opts = {
-                    **ydl_opts,
-                    'extractor_args': {'youtube': {'player_client': ['android']}},
-                }
-                fallback_opts.pop('cookiefile', None)
-                with yt_dlp.YoutubeDL(fallback_opts) as ydl:
-                    return ydl.extract_info(url, download=False)
-            raise
+            # Fallback retry using unauthenticated android_vr/android/ios chain
+            logger.warning(
+                f"Primary player client extraction failed or restricted ({first_exc}); "
+                "retrying fallback with unauthenticated android_vr mobile client chain."
+            )
+            fallback_opts = {
+                'quiet': True,
+                'no_warnings': True,
+                'noplaylist': True,
+                'socket_timeout': 15,
+                'extract_flat': False,
+                'extractor_args': {'youtube': {'player_client': ['android_vr', 'android', 'ios']}},
+            }
+            with yt_dlp.YoutubeDL(fallback_opts) as ydl_fallback:
+                return ydl_fallback.extract_info(url, download=False)
 
     @staticmethod
     def build_clean_info(info: Dict[str, Any]) -> Dict[str, Any]:
@@ -209,17 +217,14 @@ class DownloadEngine:
     def analyze_url(self, url: str, cookies_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Calls yt-dlp CLI to extract info without downloading (legacy method).
-
-        Uses the android player client for anonymous requests and web for
-        cookie-authenticated ones, with an automatic fallback to android.
         """
         has_cookies = bool(cookies_path and os.path.exists(cookies_path))
-        client = self._player_client(has_cookies)
+        client_chain = ",".join(self._player_client_chain(has_cookies))
 
-        def _build_cmd(c: str, with_cookies: bool) -> list:
+        def _build_cmd(c_chain: str, with_cookies: bool) -> list:
             args = ['yt-dlp', '--dump-json', '--no-playlist', '--flat-playlist']
             args.extend(['--socket-timeout', '10'])
-            args.extend(['--extractor-args', f'youtube:player_client={c}'])
+            args.extend(['--extractor-args', f'youtube:player_client={c_chain}'])
             if with_cookies and cookies_path and os.path.exists(cookies_path):
                 args.extend(['--cookies', cookies_path])
             args.append(url)
@@ -241,15 +246,25 @@ class DownloadEngine:
             return process.returncode, stdout, stderr
 
         try:
-            cmd = _build_cmd(client, has_cookies)
+            cmd = _build_cmd(client_chain, has_cookies)
             returncode, stdout, stderr = _run(cmd)
 
-            if returncode != 0 and has_cookies:
-                # Fallback to android client without cookies
+            if returncode == 0:
+                try:
+                    info = json.loads(stdout)
+                    formats = info.get('formats', [])
+                    if len(formats) <= 2:
+                        returncode = -1
+                        stderr = "Throttled formats list detected on primary client chain."
+                except Exception:
+                    pass
+
+            if returncode != 0:
+                # Fallback to unauthenticated android_vr,android,ios
                 logger.warning(
-                    f"Web client CLI extraction failed; retrying with android client."
+                    f"Primary client chain CLI extraction failed or was restricted; retrying with unauthenticated fallback client chain."
                 )
-                cmd = _build_cmd('android', False)
+                cmd = _build_cmd('android_vr,android,ios', False)
                 returncode, stdout, stderr = _run(cmd)
 
             if returncode != 0:
@@ -278,156 +293,156 @@ class DownloadEngine:
     ) -> str:
         """
         Downloads a specific format by format_id.
-
-        - If the format is video-only (no embedded audio), yt-dlp automatically
-          fetches the best audio stream and merges them via FFmpeg.
-        - If it is progressive video, it downloads only the selected format_id.
-        - If it is an audio-only format, it extracts and converts it correctly to mp3/m4a.
-        - All options from the options dict are sanitised and applied.
         """
-        cmd = ['yt-dlp']
+        def _run_ytdlp_process(use_cookies: bool) -> int:
+            cmd = ['yt-dlp']
 
-        # Output template
-        cmd.extend(['-o', output_template])
+            # Output template
+            cmd.extend(['-o', output_template])
 
-        # Standard flags
-        cmd.extend(['--newline', '--no-warnings'])
+            # Standard flags
+            cmd.extend(['--newline', '--no-warnings'])
 
-        # Player client — android for anonymous, web for cookie-auth
-        cookies_path = options.get('cookies_path', '')
-        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
-        player_client = self._player_client(has_cookies)
-        cmd.extend(['--extractor-args', f'youtube:player_client={player_client}'])
+            # Player client chain
+            client_chain = ",".join(self._player_client_chain(use_cookies))
+            cmd.extend(['--extractor-args', f'youtube:player_client={client_chain}'])
 
-        if is_audio_only:
-            # Audio download path: download specific format_id, then extract audio
-            cmd.extend(['-f', format_id])
-            cmd.extend(['-x', '--audio-format', options.get('audio_format', 'mp3')])
-            cmd.extend(['--audio-quality', options.get('audio_quality', '0')])
-        else:
-            # Video path:
-            if is_video_only:
-                # Merge the chosen video-only format with the best audio stream
-                cmd.extend(['-f', f'{format_id}+bestaudio/best'])
-            else:
-                # Format already contains audio, download format_id directly
+            if is_audio_only:
+                # Audio download path
                 cmd.extend(['-f', format_id])
-
-            # Merge output format container
-            container = options.get('container', 'mp4')
-            cmd.extend(['--merge-output-format', container])
-
-        # Subtitles
-        subtitle_langs = options.get('subtitle_languages', [])
-        if subtitle_langs:
-            cmd.append('--write-subs')
-            if 'all' in subtitle_langs:
-                cmd.append('--all-subs')
+                cmd.extend(['-x', '--audio-format', options.get('audio_format', 'mp3')])
+                cmd.extend(['--audio-quality', options.get('audio_quality', '0')])
             else:
-                cmd.extend(['--sub-langs', ','.join(subtitle_langs)])
-
-        # Thumbnail
-        if options.get('download_thumbnail', False):
-            cmd.append('--write-thumbnail')
-
-        # SponsorBlock
-        if options.get('sponsorblock', False):
-            cmd.extend(['--sponsorblock-remove', 'all'])
-
-        # Metadata & chapters embedding
-        if options.get('embed_metadata', False):
-            cmd.append('--embed-metadata')
-        if options.get('embed_chapters', False):
-            cmd.append('--embed-chapters')
-        if options.get('embed_thumbnail', False) or options.get('embed_album_art', False):
-            cmd.append('--embed-thumbnail')
-
-        # Cookies file (client sent)
-        if has_cookies:
-            cmd.extend(['--cookies', cookies_path])
-
-        # Rate limit (Ensure NO speed limit is set unless requested)
-        rate_limit = options.get('rate_limit', '')
-        if rate_limit:
-            cmd.extend(['-r', rate_limit])
-
-        # Concurrent fragments: defaulted to 16 for high-speed download
-        concurrent_fragments = options.get('concurrent_fragments', 16)
-        cmd.extend(['--concurrent-fragments', str(concurrent_fragments)])
-
-        # Retries
-        cmd.extend(['--retries', str(options.get('retries', 3))])
-
-        # Optional aria2c external downloader
-        if options.get('use_aria2c', False):
-            cmd.extend(['--external-downloader', 'aria2c'])
-            cmd.extend(['--external-downloader-args', 'aria2c:-x 16 -s 16 -k 1M'])
-
-        cmd.append(url)
-
-        logger.info(f"[Job {job_id}] Executing: {' '.join(cmd)}")
-
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1,
-        )
-
-        # Store PID for cancellation
-        os.environ[f"ZFETCH_PID_{job_id}"] = str(process.pid)
-
-        try:
-            for line in iter(process.stdout.readline, ''):
-                line = line.strip()
-                if not line:
-                    continue
-
-                match = self.PROGRESS_REGEX.search(line)
-                if match:
-                    progress_callback({
-                        'status': 'downloading',
-                        'progress': float(match.group('progress')),
-                        'size': match.group('size'),
-                        'speed': match.group('speed'),
-                        'eta': match.group('eta'),
-                    })
+                # Video download path
+                if is_video_only:
+                    cmd.extend(['-f', f'{format_id}+bestaudio/best'])
                 else:
-                    alt_match = self.ALT_PROGRESS_REGEX.search(line)
-                    if alt_match:
+                    cmd.extend(['-f', format_id])
+
+                container = options.get('container', 'mp4')
+                cmd.extend(['--merge-output-format', container])
+
+            # Subtitles
+            subtitle_langs = options.get('subtitle_languages', [])
+            if subtitle_langs:
+                cmd.append('--write-subs')
+                if 'all' in subtitle_langs:
+                    cmd.append('--all-subs')
+                else:
+                    cmd.extend(['--sub-langs', ','.join(subtitle_langs)])
+
+            # Thumbnail
+            if options.get('download_thumbnail', False):
+                cmd.append('--write-thumbnail')
+
+            # SponsorBlock
+            if options.get('sponsorblock', False):
+                cmd.extend(['--sponsorblock-remove', 'all'])
+
+            # Metadata & chapters embedding
+            if options.get('embed_metadata', False):
+                cmd.append('--embed-metadata')
+            if options.get('embed_chapters', False):
+                cmd.append('--embed-chapters')
+            if options.get('embed_thumbnail', False) or options.get('embed_album_art', False):
+                cmd.append('--embed-thumbnail')
+
+            # Cookies file
+            cookies_path = options.get('cookies_path', '')
+            if use_cookies and cookies_path and os.path.exists(cookies_path):
+                cmd.extend(['--cookies', cookies_path])
+
+            # Rate limit
+            rate_limit = options.get('rate_limit', '')
+            if rate_limit:
+                cmd.extend(['-r', rate_limit])
+
+            # Concurrent fragments
+            concurrent_fragments = options.get('concurrent_fragments', 16)
+            cmd.extend(['--concurrent-fragments', str(concurrent_fragments)])
+
+            # Retries
+            cmd.extend(['--retries', str(options.get('retries', 3))])
+
+            # Optional aria2c external downloader
+            if options.get('use_aria2c', False):
+                cmd.extend(['--external-downloader', 'aria2c'])
+                cmd.extend(['--external-downloader-args', 'aria2c:-x 16 -s 16 -k 1M'])
+
+            cmd.append(url)
+
+            logger.info(f"[Job {job_id}] Executing (use_cookies={use_cookies}, client_chain={client_chain}): {' '.join(cmd)}")
+
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                bufsize=1,
+            )
+
+            # Store PID for cancellation
+            os.environ[f"ZFETCH_PID_{job_id}"] = str(process.pid)
+
+            try:
+                for line in iter(process.stdout.readline, ''):
+                    line = line.strip()
+                    if not line:
+                        continue
+
+                    match = self.PROGRESS_REGEX.search(line)
+                    if match:
                         progress_callback({
                             'status': 'downloading',
-                            'progress': float(alt_match.group('progress')),
-                            'speed': alt_match.group('speed'),
-                            'eta': alt_match.group('eta'),
+                            'progress': float(match.group('progress')),
+                            'size': match.group('size'),
+                            'speed': match.group('speed'),
+                            'eta': match.group('eta'),
+                        })
+                    else:
+                        alt_match = self.ALT_PROGRESS_REGEX.search(line)
+                        if alt_match:
+                            progress_callback({
+                                'status': 'downloading',
+                                'progress': float(alt_match.group('progress')),
+                                'speed': alt_match.group('speed'),
+                                'eta': alt_match.group('eta'),
+                            })
+
+                    if 'Merging formats into' in line or '[ffmpeg]' in line:
+                        progress_callback({
+                            'status': 'processing',
+                            'progress': 100.0,
+                            'speed': '0B/s',
+                            'eta': '00:00',
                         })
 
-                if 'Merging formats into' in line or '[ffmpeg]' in line:
-                    progress_callback({
-                        'status': 'processing',
-                        'progress': 100.0,
-                        'speed': '0B/s',
-                        'eta': '00:00',
-                    })
+                process.wait()
+                return process.returncode
+            finally:
+                if process.poll() is None:
+                    process.kill()
+                if f"ZFETCH_PID_{job_id}" in os.environ:
+                    del os.environ[f"ZFETCH_PID_{job_id}"]
 
-            process.wait()
+        cookies_path = options.get('cookies_path', '')
+        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
 
-            if f"ZFETCH_PID_{job_id}" in os.environ:
-                del os.environ[f"ZFETCH_PID_{job_id}"]
+        # First Attempt (Standard, passes cookies if they are provided)
+        returncode = _run_ytdlp_process(use_cookies=has_cookies)
 
-            if process.returncode != 0:
-                raise Exception(f"yt-dlp terminated with return code {process.returncode}")
+        # Retry Fallback (Runs unauthenticated with primary chain if standard attempt fails)
+        if returncode != 0 and has_cookies:
+            logger.warning(
+                f"[Job {job_id}] Download with standard options failed with exit code {returncode}. "
+                "Retrying download fallback with unauthenticated client chain..."
+            )
+            returncode = _run_ytdlp_process(use_cookies=False)
 
-            return "Download completed successfully"
+        if returncode != 0:
+            raise Exception(f"yt-dlp terminated with return code {returncode}")
 
-        except Exception as e:
-            if process.poll() is None:
-                process.kill()
-            if f"ZFETCH_PID_{job_id}" in os.environ:
-                del os.environ[f"ZFETCH_PID_{job_id}"]
-            logger.error(f"[Job {job_id}] Download error: {str(e)}")
-            raise e
+        return "Download completed successfully"
 
     # ──────────────────────────────────────────────────────────────────────────
     # Phase 2 – Legacy generic download (kept for backward compatibility)
@@ -488,9 +503,9 @@ class DownloadEngine:
         if has_cookies:
             args.extend(['--cookies', cookies_path])
 
-        # Player client
-        client = 'web' if has_cookies else 'android'
-        args.extend(['--extractor-args', f'youtube:player_client={client}'])
+        # Player client chain (comma separated string for legacy command line)
+        clients = 'android_vr,android,ios,web' if has_cookies else 'android_vr,android,ios'
+        args.extend(['--extractor-args', f'youtube:player_client={clients}'])
 
         rate_limit = options.get('rate_limit')
         if rate_limit:

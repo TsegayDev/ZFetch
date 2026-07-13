@@ -19,349 +19,100 @@ import os
 import re
 import sys
 import time
-import json
-import shutil
-import sqlite3
-import tempfile
-import base64
-import subprocess
+import glob
 import requests
-from pathlib import Path
-from typing import Optional, Dict, List
 
-#BASE_URL = "https://zfetch-production.up.railway.app/"
-BASE_URL = "http://127.0.0.1:8000/"
-TEST_VIDEO_URL = "https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch"  # Helen Meles
+BASE_URL = "http://127.0.0.1:8000"
+TEST_VIDEO_URL = "https://www.youtube.com/watch?v=S9g4HY9BbEY"  # Helen Meles
 
-# ─── Robust Cookie Extraction ────────────────────────────────────────────────
-# Provides multiple methods to extract YouTube cookies:
-#   1. YOUTUBE_COOKIES env var — paste the full Netscape cookie string
-#   2. cookies.txt file — place a Netscape-format cookies.txt next to this script
-#   3. Browser cookie extraction (Chrome, Firefox, Edge, Brave, Opera)
-#   4. yt-dlp's built-in --cookies-from-browser functionality
-
-class CookieExtractor:
-    """Robust cookie extraction from multiple sources"""
-    
-    # Common browser cookie locations (Linux)
-    BROWSER_COOKIE_PATHS = {
-        'chrome': [
-            Path.home() / '.config/google-chrome/Default/Cookies',
-            Path.home() / '.config/google-chrome/Profile */Cookies',
-            Path.home() / '.var/app/com.google.Chrome/config/google-chrome/Default/Cookies',
-        ],
-        'chromium': [
-            Path.home() / '.config/chromium/Default/Cookies',
-            Path.home() / '.var/app/org.chromium.Chromium/config/chromium/Default/Cookies',
-        ],
-        'firefox': [
-            Path.home() / '.mozilla/firefox/*.default-release/cookies.sqlite',
-            Path.home() / '.mozilla/firefox/*.default/cookies.sqlite',
-            Path.home() / '.var/app/org.mozilla.firefox/.mozilla/firefox/*.default-release/cookies.sqlite',
-        ],
-        'brave': [
-            Path.home() / '.config/BraveSoftware/Brave-Browser/Default/Cookies',
-            Path.home() / '.var/app/com.brave.Browser/config/BraveSoftware/Brave-Browser/Default/Cookies',
-        ],
-        'edge': [
-            Path.home() / '.config/microsoft-edge/Default/Cookies',
-            Path.home() / '.var/app/com.microsoft.Edge/config/microsoft-edge/Default/Cookies',
-        ],
-        'opera': [
-            Path.home() / '.config/opera/Default/Cookies',
-            Path.home() / '.var/app/com.opera.Opera/config/opera/Default/Cookies',
-        ],
-        'vivaldi': [
-            Path.home() / '.config/vivaldi/Default/Cookies',
-            Path.home() / '.var/app/com.vivaldi.Vivaldi/config/vivaldi/Default/Cookies',
-        ],
-    }
-    
-    @staticmethod
-    def find_browser_cookie_files() -> Dict[str, List[Path]]:
-        """Find available browser cookie databases"""
-        found = {}
-        for browser, patterns in CookieExtractor.BROWSER_COOKIE_PATHS.items():
-            for pattern in patterns:
-                try:
-                    rel_pattern = pattern.relative_to(Path.home())
-                    matches = list(Path.home().glob(str(rel_pattern)))
-                except ValueError:
-                    matches = [pattern] if pattern.exists() else []
-                matches = [m for m in matches if m.exists()]
-                if matches:
-                    if browser not in found:
-                        found[browser] = []
-                    found[browser].extend(matches)
-        return found
-    
-    @staticmethod
-    def extract_chrome_cookies(cookie_db: Path) -> str:
-        """Extract YouTube cookies from Chrome/Chromium cookie database"""
-        try:
-            # Create a temporary copy to avoid locking issues
-            with tempfile.NamedTemporaryFile(suffix='.sqlite', delete=False) as tmp:
-                shutil.copy2(cookie_db, tmp.name)
-                tmp_path = tmp.name
-            
-            conn = sqlite3.connect(tmp_path)
-            conn.text_factory = bytes
-            cursor = conn.cursor()
-            
-            # Query YouTube cookies
-            cursor.execute("""
-                SELECT host_key, name, value, path, expires_utc, is_secure, is_httponly
-                FROM cookies
-                WHERE host_key LIKE '%youtube.com'
-            """)
-            
-            cookies = []
-            for row in cursor.fetchall():
-                host_key = row[0].decode('utf-8', errors='replace')
-                name = row[1].decode('utf-8', errors='replace')
-                value = row[2].decode('utf-8', errors='replace')
-                path = row[3].decode('utf-8', errors='replace')
-                expires = row[4]
-                is_secure = row[5]
-                is_httponly = row[6]
-                
-                # Convert to Netscape format
-                if not value or value.startswith('v10') or value.startswith('v11') or not value.strip():
-                    continue
-                secure_flag = "TRUE" if is_secure else "FALSE"
-                httponly_flag = "TRUE" if is_httponly else "FALSE"
-                expires_str = str(expires) if expires else "0"
-                
-                cookies.append(
-                    f"{host_key}\tTRUE\t{path}\t{secure_flag}\t{expires_str}\t{name}\t{value}"
-                )
-            
-            conn.close()
-            os.unlink(tmp_path)
-            
-            if cookies:
-                return "# Netscape HTTP Cookie File\n# Extracted from Chrome/Chromium\n\n" + "\n".join(cookies)
-            return ""
-            
-        except Exception as e:
-            print(f"  [cookies] Failed to extract Chrome cookies: {e}")
-            if 'tmp_path' in locals() and os.path.exists(tmp_path):
-                os.unlink(tmp_path)
-            return ""
-    
-    @staticmethod
-    def extract_firefox_cookies(cookie_db: Path) -> str:
-        """Extract YouTube cookies from Firefox cookie database"""
-        try:
-            # Create a temporary copy
-            with tempfile.NamedTemporaryFile(suffix='.sqlite', delete=False) as tmp:
-                shutil.copy2(cookie_db, tmp.name)
-                tmp_path = tmp.name
-            
-            conn = sqlite3.connect(tmp_path)
-            cursor = conn.cursor()
-            
-            # Query YouTube cookies
-            cursor.execute("""
-                SELECT host, name, value, path, expiry, isSecure, isHttpOnly
-                FROM moz_cookies
-                WHERE host LIKE '%youtube.com'
-            """)
-            
-            cookies = []
-            for row in cursor.fetchall():
-                host = row[0]
-                name = row[1]
-                value = row[2]
-                path = row[3]
-                expiry = row[4]
-                is_secure = row[5]
-                is_httponly = row[6]
-                
-                secure_flag = "TRUE" if is_secure else "FALSE"
-                httponly_flag = "TRUE" if is_httponly else "FALSE"
-                expires_str = str(expiry) if expiry else "0"
-                
-                cookies.append(
-                    f"{host}\tTRUE\t{path}\t{secure_flag}\t{expires_str}\t{name}\t{value}"
-                )
-            
-            conn.close()
-            os.unlink(tmp_path)
-            
-            if cookies:
-                return "# Netscape HTTP Cookie File\n# Extracted from Firefox\n\n" + "\n".join(cookies)
-            return ""
-            
-        except Exception as e:
-            print(f"  [cookies] Failed to extract Firefox cookies: {e}")
-            if 'tmp_path' in locals() and os.path.exists(tmp_path):
-                os.unlink(tmp_path)
-            return ""
-    
-    @staticmethod
-    def extract_using_ytdlp() -> Optional[str]:
-        """Use yt-dlp's built-in browser cookie extraction"""
-        browsers_to_try = ['chrome', 'firefox', 'brave', 'edge', 'opera', 'chromium', 'vivaldi']
-        
-        for browser in browsers_to_try:
-            try:
-                print(f"  [cookies] Trying to extract from {browser} using yt-dlp...")
-                
-                # Check if yt-dlp is available
-                if shutil.which('yt-dlp'):
-                    cmd = ['yt-dlp', '--cookies-from-browser', browser, '--cookies', '/dev/stdout', 
-                           '--skip-download', '--quiet', 'https://www.youtube.com']
-                    
-                    result = subprocess.run(
-                        cmd, 
-                        capture_output=True, 
-                        text=True, 
-                        timeout=10,
-                        env={**os.environ, 'PYTHONUNBUFFERED': '1'}
-                    )
-                    
-                    if result.returncode == 0 and result.stdout.strip():
-                        # Check if output looks like Netscape cookies
-                        if '.youtube.com' in result.stdout and '\t' in result.stdout:
-                            return result.stdout.strip()
-                    else:
-                        print(f"    yt-dlp {browser} extraction failed: {result.stderr[:100]}")
-                
-            except FileNotFoundError:
-                continue
-            except subprocess.TimeoutExpired:
-                print(f"    {browser} extraction timed out")
-            except Exception as e:
-                print(f"    {browser} extraction error: {e}")
-        
-        return None
-    
-    @staticmethod
-    def extract_using_python_browsercookie() -> Optional[str]:
-        """Try using the browser_cookie3 library if available"""
-        try:
-            import browser_cookie3
-            
-            browsers_to_try = [
-                ('chrome', browser_cookie3.chrome),
-                ('firefox', browser_cookie3.firefox),
-                ('brave', browser_cookie3.brave),
-                ('edge', browser_cookie3.edge),
-                ('opera', browser_cookie3.opera),
-            ]
-            
-            for browser_name, loader in browsers_to_try:
-                try:
-                    print(f"  [cookies] Trying to extract from {browser_name} using browser_cookie3...")
-                    cj = loader(domain_name='youtube.com')
-                    
-                    cookies = []
-                    for cookie in cj:
-                        if 'youtube.com' in cookie.domain:
-                            # Skip empty or encrypted cookie values (Chrome uses v10/v11 prefixes on Linux/Windows for encrypted bytes)
-                            val = cookie.value
-                            if not val or val.startswith('v10') or val.startswith('v11') or not val.strip():
-                                continue
-                            secure_flag = "TRUE" if cookie.secure else "FALSE"
-                            expires = str(int(cookie.expires)) if cookie.expires else "0"
-                            
-                            cookies.append(
-                                f"{cookie.domain}\tTRUE\t{cookie.path}\t{secure_flag}"
-                                f"\t{expires}\t{cookie.name}\t{val}"
-                            )
-                    
-                    if cookies:
-                        return "# Netscape HTTP Cookie File\n" + "\n".join(cookies)
-                except Exception:
-                    continue
-                    
-        except ImportError:
-            pass
-        
-        return None
-
+# ─── Cookie Loading ───────────────────────────────────────────────────────────
 
 def load_cookies() -> str:
     """
-    Robust cookie loading with multiple fallback methods.
-    Returns a Netscape-format cookie string, or an empty string if none found.
+    Attempts to retrieve Netscape-format YouTube cookies using multiple strategies:
+    1. YOUTUBE_COOKIES env var.
+    2. Local cookies.txt.
+    3. Common browser-exported download paths.
+    4. Programmatic extraction from active browsers using browser_cookie3 (if installed).
     """
-    print("\n  [cookies] Attempting to load YouTube cookies...")
-    
-    # Method 1: Environment variable
+    # 1. Environment Variable
     env_cookies = os.environ.get("YOUTUBE_COOKIES", "").strip()
     if env_cookies:
-        # Check if it's base64 encoded (for easier copy-paste)
-        try:
-            decoded = base64.b64decode(env_cookies).decode('utf-8')
-            if '.youtube.com' in decoded and '\t' in decoded:
-                print("  [cookies] ✓ Loaded from YOUTUBE_COOKIES env var (base64 decoded)")
-                return decoded
-        except Exception:
-            pass
-        
-        if '.youtube.com' in env_cookies:
-            print("  [cookies] ✓ Loaded from YOUTUBE_COOKIES env var")
-            return env_cookies
-    
-    # Method 2: cookies.txt file in script directory
-    cookie_files = [
-        Path(__file__).parent / "cookies.txt",
-        Path(__file__).parent / "youtube_cookies.txt",
-        Path.home() / "cookies.txt",
-        Path.home() / "youtube_cookies.txt",
+        print("  [cookies] Loaded from YOUTUBE_COOKIES env var")
+        return env_cookies
+
+    # 2. Local cookies.txt next to script
+    cookie_file = os.path.join(os.path.dirname(__file__), "cookies.txt")
+    if os.path.exists(cookie_file):
+        with open(cookie_file, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+        if content:
+            print(f"  [cookies] Loaded from {cookie_file}")
+            return content
+
+    # 3. Auto-detect common downloaded cookie file patterns in ~/Downloads
+    home = os.path.expanduser("~")
+    possible_paths = [
+        os.path.join(home, "Downloads", "cookies.txt"),
+        os.path.join(home, "Downloads", "youtube.com_cookies.txt"),
+        os.path.join(home, "Downloads", "*cookies*.txt")
     ]
-    
-    for cookie_file in cookie_files:
-        if cookie_file.exists():
+    for path_pattern in possible_paths:
+        for match in glob.glob(path_pattern):
             try:
-                content = cookie_file.read_text(encoding='utf-8').strip()
-                if content and '.youtube.com' in content:
-                    print(f"  [cookies] ✓ Loaded from {cookie_file}")
+                with open(match, "r", encoding="utf-8") as f:
+                    content = f.read().strip()
+                if "# Netscape" in content or "youtube.com" in content:
+                    print(f"  [cookies] Auto-detected cookie file at: {match}")
                     return content
-            except Exception as e:
-                print(f"  [cookies] Failed to read {cookie_file}: {e}")
-    
-    # Method 3: Extract from browsers using yt-dlp
-    ytdlp_cookies = CookieExtractor.extract_using_ytdlp()
-    if ytdlp_cookies:
-        print("  [cookies] ✓ Extracted using yt-dlp browser integration")
-        return ytdlp_cookies
-    
-    # Method 4: Extract using Python browser_cookie3 library
-    python_cookies = CookieExtractor.extract_using_python_browsercookie()
-    if python_cookies:
-        print("  [cookies] ✓ Extracted using Python browser_cookie3")
-        return python_cookies
-    
-    # Method 5: Direct SQLite extraction from browser cookie databases
-    browser_files = CookieExtractor.find_browser_cookie_files()
-    
-    # Try Chrome-based browsers first (easier format)
-    for browser in ['chrome', 'chromium', 'brave', 'edge', 'opera', 'vivaldi']:
-        if browser in browser_files:
-            for cookie_db in browser_files[browser]:
-                print(f"  [cookies] Attempting direct extraction from {browser} at {cookie_db}")
-                cookies = CookieExtractor.extract_chrome_cookies(cookie_db)
-                if cookies and '.youtube.com' in cookies:
-                    print(f"  [cookies] ✓ Successfully extracted from {browser}")
-                    return cookies
-    
-    # Try Firefox
-    if 'firefox' in browser_files:
-        for cookie_db in browser_files['firefox']:
-            print(f"  [cookies] Attempting Firefox extraction from {cookie_db}")
-            cookies = CookieExtractor.extract_firefox_cookies(cookie_db)
-            if cookies and '.youtube.com' in cookies:
-                print("  [cookies] ✓ Successfully extracted from Firefox")
-                return cookies
-    
-    print("  [cookies] ✗ No cookies found — proceeding without authentication")
-    print("  [cookies] 💡 To fix, either:")
-    print("    1. Export cookies: yt-dlp --cookies-from-browser chrome --cookies cookies.txt")
-    print("    2. Set env var: export YOUTUBE_COOKIES='...paste cookies here...'")
-    print("    3. Install browser_cookie3: pip install browser-cookie3")
+            except Exception:
+                pass
+
+    # 4. Extract directly from local browser databases
+    try:
+        import browser_cookie3
+        print("  [cookies] browser_cookie3 found. Attempting extraction from browser...")
+        
+        browsers = [
+            ('chrome', browser_cookie3.chrome),
+            ('firefox', browser_cookie3.firefox),
+            ('brave', browser_cookie3.brave),
+            ('edge', browser_cookie3.edge),
+            ('opera', browser_cookie3.opera),
+            ('safari', browser_cookie3.safari)
+        ]
+        
+        cj = None
+        for name, func in browsers:
+            try:
+                cj = func(domain_name='.youtube.com')
+                if cj:
+                    print(f"  [cookies] Extracted from {name}")
+                    break
+            except Exception:
+                continue
+
+        if cj:
+            lines = ["# Netscape HTTP Cookie File", "# Generated by browser_cookie3 auto-extraction"]
+            for cookie in cj:
+                secure = "TRUE" if cookie.secure else "FALSE"
+                expires = str(cookie.expires) if cookie.expires is not None else "0"
+                domain = cookie.domain
+                path = cookie.path
+                name = cookie.name
+                value = cookie.value
+                
+                # Format: domain \t flag \t path \t secure \t expiration \t name \t value
+                line = f"{domain}\tTRUE\t{path}\t{secure}\t{expires}\t{name}\t{value}"
+                lines.append(line)
+            return "\n".join(lines)
+            
+    except ImportError:
+        print("  [cookies] Note: 'browser_cookie3' is not installed. To extract cookies automatically, run: pip install browser-cookie3")
+    except Exception as e:
+        print(f"  [cookies] Failed automatic extraction: {e}")
+
+    print("  [cookies] No cookies found — proceeding without authentication")
     return ""
 
 YOUTUBE_COOKIES = load_cookies()
@@ -493,22 +244,12 @@ def phase_1_extract():
     payload = {"url": TEST_VIDEO_URL}
     if YOUTUBE_COOKIES:
         payload["cookies"] = YOUTUBE_COOKIES
-        print(f"\n  [cookies] Including {len(YOUTUBE_COOKIES)} bytes of cookie data")
-    
     r = requests.post(f"{BASE_URL}/api/extract", json=payload, timeout=60)
     elapsed = time.time() - t0
 
     if r.status_code != 200:
         print("FAILED")
         print(f"  {r.status_code}: {r.text}")
-        
-        # Provide helpful error message
-        if "Sign in to confirm" in r.text or "bot" in r.text:
-            print("\n  💡 YouTube bot detection triggered. To resolve:")
-            print("    1. Export cookies: yt-dlp --cookies-from-browser chrome --cookies cookies.txt")
-            print("    2. Place cookies.txt in the same directory as this script")
-            print("    3. Or set YOUTUBE_COOKIES environment variable")
-        
         sys.exit(1)
 
     print(f"OK ({elapsed:.2f}s)")

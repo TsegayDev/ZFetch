@@ -6,6 +6,7 @@ import time
 import uuid
 import urllib.parse
 import shutil
+import json
 from rest_framework import status, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -22,19 +23,86 @@ logger = logging.getLogger('api')
 def create_cookie_file(cookies: str):
     """
     Writes a Netscape-format cookie string to a temporary file that
-    yt-dlp can consume via --cookies.  Returns the file path, or None
-    if `cookies` is empty/None.  Caller is responsible for deleting the
-    file once it is no longer needed.
+    yt-dlp can consume via --cookies.
+    
+    Supports:
+    1. Netscape-format cookie files.
+    2. JSON array files (e.g. exported from browser extensions).
+    3. Plain semicolon-separated raw cookie headers (copied from DevTools).
     """
     if not cookies or not cookies.strip():
         return None
+        
+    cookies_trimmed = cookies.strip()
+    netscape_content = ""
+
+    # 1. Determine if it is already in Netscape format
+    if cookies_trimmed.startswith("# Netscape") or "\t" in cookies_trimmed:
+        if not cookies_trimmed.startswith("# Netscape HTTP Cookie File"):
+            netscape_content = "# Netscape HTTP Cookie File\n" + cookies_trimmed
+        else:
+            netscape_content = cookies_trimmed
+
+    # 2. Determine if it is in JSON array format
+    elif cookies_trimmed.startswith("[") and cookies_trimmed.endswith("]"):
+        try:
+            cookie_list = json.loads(cookies_trimmed)
+            lines = ["# Netscape HTTP Cookie File", "# Converted from JSON payload"]
+            for item in cookie_list:
+                domain = item.get("domain", ".youtube.com")
+                # Ensure correct subdomain wildcard prefix
+                if not domain.startswith(".") and not domain.startswith("www") and "." in domain:
+                    domain = "." + domain
+                path = item.get("path", "/")
+                secure = "TRUE" if item.get("secure", True) else "FALSE"
+                
+                expiration = item.get("expirationDate")
+                if expiration is None:
+                    expiration = item.get("expiry", 0)
+                expires = str(int(expiration)) if expiration else "0"
+                
+                name = item.get("name", "")
+                value = item.get("value", "")
+                
+                if name:
+                    # Format: domain, HTTP-only, path, secure, expires, name, value
+                    line = f"{domain}\tTRUE\t{path}\t{secure}\t{expires}\t{name}\t{value}"
+                    lines.append(line)
+            netscape_content = "\n".join(lines)
+        except Exception as e:
+            logger.warning(f"Failed to parse cookies as JSON: {e}")
+
+    # 3. Determine if it is a semicolon-separated raw Header string (Cookie: name=val; name2=val2)
+    elif "=" in cookies_trimmed:
+        try:
+            raw_cookies = cookies_trimmed
+            if raw_cookies.lower().startswith("cookie:"):
+                raw_cookies = raw_cookies[7:].strip()
+                
+            parts = raw_cookies.split(";")
+            lines = ["# Netscape HTTP Cookie File", "# Converted from Raw Cookie Header"]
+            for part in parts:
+                part = part.strip()
+                if not part or "=" not in part:
+                    continue
+                name, val = part.split("=", 1)
+                name = name.strip()
+                val = val.strip()
+                if name:
+                    line = f".youtube.com\tTRUE\t/\tTRUE\t0\t{name}\t{val}"
+                    lines.append(line)
+            netscape_content = "\n".join(lines)
+        except Exception as e:
+            logger.warning(f"Failed to parse cookies as header: {e}")
+
+    # Fallback to writing raw content if parsing didn't map a format
+    if not netscape_content:
+        netscape_content = "# Netscape HTTP Cookie File\n" + cookies_trimmed
+
     fd, path = tempfile.mkstemp(suffix=".txt", prefix="zfetch_cookie_")
     try:
-        with os.fdopen(fd, "w") as f:
-            # Ensure Netscape header is present (yt-dlp requires it)
-            if not cookies.strip().startswith("# Netscape HTTP Cookie File"):
-                f.write("# Netscape HTTP Cookie File\n")
-            f.write(cookies)
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(netscape_content)
     except Exception:
         os.remove(path)
         raise

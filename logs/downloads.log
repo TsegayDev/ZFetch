@@ -291,3 +291,20 @@ INFO 2026-07-13 15:42:18,124 apps 49126 140496849533888 [Scheduler] Stateless te
 INFO 2026-07-13 15:42:18,871 apps 49128 139714918898624 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
 INFO 2026-07-13 15:43:06,824 engine 48807 139662725215936 Extracting info (Python API, client=web) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
 WARNING 2026-07-13 15:43:14,248 engine 48807 139662725215936 Web client extraction failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with android client (no cookies).
+INFO 2026-07-13 15:49:40,870 engine 48807 139662716823232 Extracting info (Python API, client=web) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+WARNING 2026-07-13 15:49:46,060 engine 48807 139662716823232 Web client extraction failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with android client (no cookies).
+INFO 2026-07-13 16:02:21,062 apps 51473 140635634777024 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:02:41,229 apps 51488 140701303208896 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:03:20,151 apps 51526 139623999949760 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:05:14,600 engine 51526 139623279883968 Extracting info (Python API, client_chain=['web', 'ios', 'android']) for URL: https://www.youtube.com/watch?v=S9g4HY9BbEY
+WARNING 2026-07-13 16:05:20,138 engine 51526 139623279883968 Web client extraction with cookies failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with unauthenticated mobile client chain.
+INFO 2026-07-13 16:08:06,900 apps 51994 139731850804160 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:08:31,551 engine 51994 139731424765632 Extracting info (Python API, client_chain=['ios', 'android', 'web']) for URL: https://www.youtube.com/watch?v=S9g4HY9BbEY
+WARNING 2026-07-13 16:08:37,510 engine 51994 139731424765632 Web client extraction with cookies failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with unauthenticated mobile client chain.
+INFO 2026-07-13 16:12:46,389 apps 52185 140338269383616 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:12:57,942 engine 52185 140337844577984 Extracting info (Python API, client=web) for URL: https://www.youtube.com/watch?v=S9g4HY9BbEY
+WARNING 2026-07-13 16:13:03,531 engine 52185 140337844577984 Web client extraction failed or was restricted (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying fallback with unauthenticated Android client.
+INFO 2026-07-13 16:18:13,242 apps 52642 140698098482112 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 16:18:27,672 engine 52642 140697673918144 Extracting info (Python API, client_chain=['android_vr', 'android', 'ios', 'web']) for URL: https://www.youtube.com/watch?v=S9g4HY9BbEY
+WARNING 2026-07-13 16:18:33,765 engine 52642 140697673918144 Primary player client extraction failed or restricted (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying fallback with unauthenticated android_vr mobile client chain.
+INFO 2026-07-13 16:19:04,874 apps 52718 139853206817728 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
