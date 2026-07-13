@@ -270,3 +270,24 @@ WARNING 2026-07-13 12:22:42,604 metadata 26774 140648441912256 Metadata embeddin
 INFO 2026-07-13 12:24:23,644 engine 26638 140676366853824 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
 INFO 2026-07-13 12:24:53,613 engine 26638 140676366853824 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
 INFO 2026-07-13 12:24:56,074 engine 26638 140676375246528 [Job 5d523777-beed-4571-8cfa-21d33287874e] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/5d523777-beed-4571-8cfa-21d33287874e/media.%(ext)s --newline --no-warnings -f 394 --merge-output-format mp4 --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 15:18:08,276 apps 46512 140588216257472 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:18:08,760 apps 46514 139775616318400 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:19:28,637 engine 46514 139775172396736 Extracting info (Python API, client=web) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+WARNING 2026-07-13 15:19:39,902 engine 46514 139775172396736 Web client extraction failed ([0;31mERROR:[0m [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with android client (no cookies).
+INFO 2026-07-13 15:24:48,309 apps 47316 140388601064384 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:25:16,692 apps 47370 140415302237120 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:25:16,950 engine 47370 140415302237120 Extracting info (Python API, client=android) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 15:29:32,999 apps 47765 140356952959936 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:29:33,419 apps 47772 140592236579776 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:30:43,666 apps 47981 140139866418112 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:30:44,380 apps 47989 139811966036928 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:33:51,208 engine 47989 139811541214912 Extracting info (Python API, client=web) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+WARNING 2026-07-13 15:34:00,184 engine 47989 139811541214912 Web client extraction failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with android client (no cookies).
+INFO 2026-07-13 15:37:49,340 apps 48798 140529033055168 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:38:07,179 apps 48807 139663141718976 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:39:08,788 engine 48807 139662716823232 Extracting info (Python API, client=android) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 15:41:13,531 engine 48807 139662716823232 Extracting info (Python API, client=android) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 15:42:18,124 apps 49126 140496849533888 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:42:18,871 apps 49128 139714918898624 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 15:43:06,824 engine 48807 139662725215936 Extracting info (Python API, client=web) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+WARNING 2026-07-13 15:43:14,248 engine 48807 139662725215936 Web client extraction failed (ERROR: [youtube] S9g4HY9BbEY: Requested format is not available. Use --list-formats for a list of available formats); retrying with android client (no cookies).

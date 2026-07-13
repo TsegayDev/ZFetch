@@ -28,25 +28,63 @@ class DownloadEngine:
     # Phase 1 – Extraction (Python API, no download)
     # ──────────────────────────────────────────────────────────────────────────
 
+    @staticmethod
+    def _player_client(has_cookies: bool) -> str:
+        """
+        Choose the best YouTube player-client based on auth mode.
+
+        Without cookies → android
+            The Android client hits a private API that needs no JS challenge
+            and no login. Fast and reliable for public videos.
+
+        With cookies → web
+            The web client honours cookies for auth.
+        """
+        return 'web' if has_cookies else 'android'
+
     def analyze_info(self, url: str, cookies_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Extracts complete video metadata using the yt-dlp Python API.
         No file is downloaded. Returns the raw info dict.
+
+        Uses the android player client for anonymous requests (avoids JS
+        challenges) and the web client when cookies are supplied.
+        Automatically falls back to the android client if web+cookies fails.
         """
+        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
+        client = self._player_client(has_cookies)
+
         ydl_opts = {
             'quiet': True,
             'no_warnings': True,
             'noplaylist': True,
             'socket_timeout': 15,
             'extract_flat': False,  # We want full format list
+            'extractor_args': {'youtube': {'player_client': [client]}},
         }
-        if cookies_path and os.path.exists(cookies_path):
+        if has_cookies:
             ydl_opts['cookiefile'] = cookies_path
 
-        logger.info(f"Extracting info (Python API) for URL: {url}")
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(url, download=False)
-        return info
+        logger.info(f"Extracting info (Python API, client={client}) for URL: {url}")
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                info = ydl.extract_info(url, download=False)
+            return info
+        except Exception as first_exc:
+            # If web client with cookies failed, retry with android client
+            if has_cookies:
+                logger.warning(
+                    f"Web client extraction failed ({first_exc}); "
+                    "retrying with android client (no cookies)."
+                )
+                fallback_opts = {
+                    **ydl_opts,
+                    'extractor_args': {'youtube': {'player_client': ['android']}},
+                }
+                fallback_opts.pop('cookiefile', None)
+                with yt_dlp.YoutubeDL(fallback_opts) as ydl:
+                    return ydl.extract_info(url, download=False)
+            raise
 
     @staticmethod
     def build_clean_info(info: Dict[str, Any]) -> Dict[str, Any]:
@@ -171,16 +209,23 @@ class DownloadEngine:
     def analyze_url(self, url: str, cookies_path: Optional[str] = None) -> Dict[str, Any]:
         """
         Calls yt-dlp CLI to extract info without downloading (legacy method).
+
+        Uses the android player client for anonymous requests and web for
+        cookie-authenticated ones, with an automatic fallback to android.
         """
-        cmd = ['yt-dlp', '--dump-json', '--no-playlist', '--flat-playlist']
-        cmd.extend(['--socket-timeout', '10'])
+        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
+        client = self._player_client(has_cookies)
 
-        if cookies_path and os.path.exists(cookies_path):
-            cmd.extend(['--cookies', cookies_path])
+        def _build_cmd(c: str, with_cookies: bool) -> list:
+            args = ['yt-dlp', '--dump-json', '--no-playlist', '--flat-playlist']
+            args.extend(['--socket-timeout', '10'])
+            args.extend(['--extractor-args', f'youtube:player_client={c}'])
+            if with_cookies and cookies_path and os.path.exists(cookies_path):
+                args.extend(['--cookies', cookies_path])
+            args.append(url)
+            return args
 
-        cmd.append(url)
-
-        try:
+        def _run(cmd: list) -> tuple:
             logger.info(f"Running analyze cmd: {' '.join(cmd)}")
             process = subprocess.Popen(
                 cmd,
@@ -188,17 +233,30 @@ class DownloadEngine:
                 stderr=subprocess.PIPE,
                 text=True
             )
-            stdout, stderr = process.communicate(timeout=30)
+            try:
+                stdout, stderr = process.communicate(timeout=30)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                raise Exception("URL analysis timed out.")
+            return process.returncode, stdout, stderr
 
-            if process.returncode != 0:
+        try:
+            cmd = _build_cmd(client, has_cookies)
+            returncode, stdout, stderr = _run(cmd)
+
+            if returncode != 0 and has_cookies:
+                # Fallback to android client without cookies
+                logger.warning(
+                    f"Web client CLI extraction failed; retrying with android client."
+                )
+                cmd = _build_cmd('android', False)
+                returncode, stdout, stderr = _run(cmd)
+
+            if returncode != 0:
                 logger.error(f"yt-dlp analyze failed: {stderr}")
                 raise Exception(f"yt-dlp extraction failed: {stderr.strip()}")
 
             return json.loads(stdout)
-        except subprocess.TimeoutExpired:
-            process.kill()
-            logger.error(f"yt-dlp analyze timed out for {url}")
-            raise Exception("URL analysis timed out.")
         except Exception as e:
             logger.error(f"Error analyzing URL {url}: {str(e)}")
             raise e
@@ -234,6 +292,12 @@ class DownloadEngine:
 
         # Standard flags
         cmd.extend(['--newline', '--no-warnings'])
+
+        # Player client — android for anonymous, web for cookie-auth
+        cookies_path = options.get('cookies_path', '')
+        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
+        player_client = self._player_client(has_cookies)
+        cmd.extend(['--extractor-args', f'youtube:player_client={player_client}'])
 
         if is_audio_only:
             # Audio download path: download specific format_id, then extract audio
@@ -278,15 +342,8 @@ class DownloadEngine:
         if options.get('embed_thumbnail', False) or options.get('embed_album_art', False):
             cmd.append('--embed-thumbnail')
 
-        # Browser cookies
-        browser = options.get('browser', '')
-        allowed_browsers = ['chrome', 'firefox', 'safari', 'opera', 'edge', 'brave']
-        if browser and browser.lower() in allowed_browsers:
-            cmd.extend(['--cookies-from-browser', browser.lower()])
-
-        # Cookies file
-        cookies_path = options.get('cookies_path', '')
-        if cookies_path and os.path.exists(cookies_path):
+        # Cookies file (client sent)
+        if has_cookies:
             cmd.extend(['--cookies', cookies_path])
 
         # Rate limit (Ensure NO speed limit is set unless requested)
@@ -426,15 +483,14 @@ class DownloadEngine:
         if options.get('embed_thumbnail', False) or options.get('embed_album_art', False):
             args.append('--embed-thumbnail')
 
-        browser = options.get('browser')
-        if browser:
-            allowed_browsers = ['chrome', 'firefox', 'safari', 'opera', 'edge', 'brave']
-            if browser.lower() in allowed_browsers:
-                args.extend(['--cookies-from-browser', browser.lower()])
-
         cookies_path = options.get('cookies_path')
-        if cookies_path and os.path.exists(cookies_path):
+        has_cookies = bool(cookies_path and os.path.exists(cookies_path))
+        if has_cookies:
             args.extend(['--cookies', cookies_path])
+
+        # Player client
+        client = 'web' if has_cookies else 'android'
+        args.extend(['--extractor-args', f'youtube:player_client={client}'])
 
         rate_limit = options.get('rate_limit')
         if rate_limit:
