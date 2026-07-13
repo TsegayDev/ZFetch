@@ -1,0 +1,15 @@
+INFO 2026-07-10 11:24:43,387 views 193148 140510174723008 Revoked Celery Task: target-celery-task-id-123
+INFO 2026-07-10 11:27:04,028 views 193238 140575229135808 Revoked Celery Task: target-celery-task-id-123
+ERROR 2026-07-13 09:43:31,378 views 7684 140014118554560 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 09:45:41,631 views 7776 139647391910848 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 10:08:41,498 views 8571 140241698866880 DirectStreamView: CDN request failed: 403 Client Error: Forbidden for url: https://rr2---sn-n545gpjvhxu-5qqe.googlevideo.com/videoplayback?expire=1783958920&ei=KLlUavvHM7fYy_sP3pKaqQU&ip=102.218.50.173&id=o-AMmw4LHWWTENhrXg2iz5gEX-DHSp93pNkEe09c9UVq7C&itag=139&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1783937320%2C&mh=6O&mm=31%2C29&mn=sn-n545gpjvhxu-5qqe%2Csn-n545gpjvh-hc5e&ms=au%2Crdu&mv=m&mvi=2&pl=24&rms=au%2Cau&initcwndbps=320000&bui=AZFlqhPG395BLIkxzNl3RrRH6BqEjqx4jzLckEFDM-W7cNIzznqoMW1VFKfS--NIE03ilFKLY6rVvYPv&spc=SQ-umpsYk9bDFVCuEj2hsK4hbaigBsn3r0GABrFouA&vprv=1&svpuc=1&mime=audio%2Fmp4&rqh=1&gir=yes&clen=2717818&dur=445.590&lmt=1702893007946518&mt=1783936890&fvip=3&keepalive=yes&fexp=51565115%2C51946838%2C52017147&c=ANDROID_VR&txp=5318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AE0s2JYwRQIgBBf58xJLj3CAfER_SiQooOfFVG8LugUrTJ-VFnHkle8CIQCBHi1damHPhHfFykBNW7gSIvhalVl4Qn87-R_mSdL0VQ%3D%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIgHlkABYIDjxNJ5wxPbNj7RbYmdj-3zKutfNfRtWizb0kCIQDch1mjnGi74scj8DBMUUn-Oe2ank817_eXxkZYU-8iIg%3D%3D
+ERROR 2026-07-13 10:35:57,575 views 16130 140549897817024 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 10:37:21,228 views 16244 139804049152960 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 11:02:31,256 views 18918 140635257703360 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 11:18:05,056 views 19836 139979799391168 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+ERROR 2026-07-13 12:11:26,411 views 25957 140606333774784 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+INFO 2026-07-13 12:11:26,500 views 25957 140606333774784 StreamView: extracting fresh CDN URL for format 137
+ERROR 2026-07-13 12:12:04,518 views 26013 140430208588736 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+INFO 2026-07-13 12:12:04,585 views 26013 140430208588736 StreamView: extracting fresh CDN URL for format 137
+ERROR 2026-07-13 12:22:42,522 views 26774 140648441912256 Extraction failed for URL https://www.youtube.com/watch?v=bad: Network error
+INFO 2026-07-13 12:22:42,592 views 26774 140648441912256 StreamView: extracting fresh CDN URL for format 137

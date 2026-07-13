@@ -1,0 +1,37 @@
+# ---------------------------------------------------------
+# ZFetch Backend — Python Package Dependencies (Stateless)
+# ---------------------------------------------------------
+
+# Core Framework
+Django==5.0.14
+asgiref==3.11.1
+sqlparse==0.5.5
+tzdata==2026.3
+
+# Django REST Framework & CORS
+djangorestframework==3.17.1
+django-cors-headers==4.9.0
+
+# ASGI Application Server (Production)
+daphne==4.2.2
+gunicorn
+
+# Media Downloading & Processing
+yt-dlp==2026.7.4
+mutagen==1.48.1
+pillow==12.3.0
+
+# HTTP & Utility Packages
+requests==2.34.2
+certifi==2026.6.17
+charset-normalizer==3.4.9
+urllib3==2.7.0
+python-dotenv==1.2.2
+python-dateutil==2.9.0.post0
+
+# Production Static File Handling
+whitenoise==6.8.2
+msgpack==1.2.1
+packaging==26.2
+attrs==26.1.0
+typing_extensions==4.16.0

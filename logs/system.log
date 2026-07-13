@@ -1,0 +1,513 @@
+WARNING 2026-07-10 11:24:42,089 log 193148 140510174723008 Unauthorized: /api/auth/profile
+WARNING 2026-07-10 11:24:42,339 log 193148 140510174723008 Bad Request: /api/auth/logout
+WARNING 2026-07-10 11:24:42,720 log 193148 140510174723008 Bad Request: /api/auth/register
+WARNING 2026-07-10 11:24:44,972 log 193148 140510174723008 Unauthorized: /api/history/
+WARNING 2026-07-10 11:24:45,453 log 193148 140510174723008 Bad Request: /api/settings/
+WARNING 2026-07-10 11:24:45,945 log 193148 140510174723008 Unauthorized: /api/settings/
+WARNING 2026-07-10 11:24:46,962 log 193148 140510174723008 Unauthorized: /api/system/status
+WARNING 2026-07-10 11:27:02,732 log 193238 140575229135808 Unauthorized: /api/auth/profile
+WARNING 2026-07-10 11:27:02,986 log 193238 140575229135808 Unauthorized: /api/auth/refresh
+WARNING 2026-07-10 11:27:03,362 log 193238 140575229135808 Bad Request: /api/auth/register
+WARNING 2026-07-10 11:27:05,610 log 193238 140575229135808 Unauthorized: /api/history/
+WARNING 2026-07-10 11:27:06,097 log 193238 140575229135808 Bad Request: /api/settings/
+WARNING 2026-07-10 11:27:06,583 log 193238 140575229135808 Unauthorized: /api/settings/
+WARNING 2026-07-10 11:27:07,495 log 193238 140575229135808 Unauthorized: /api/system/status
+WARNING 2026-07-10 12:44:54,470 log 239085 140644283573952 Not Found: /favicon.ico
+WARNING 2026-07-10 12:45:12,340 log 239085 140644283573952 Not Found: /api/
+INFO 2026-07-13 07:29:07,625 autoreload 21385 140398537419712 Watching for file changes with StatReloader
+INFO 2026-07-13 07:31:21,991 autoreload 23753 139702672841664 Watching for file changes with StatReloader
+INFO 2026-07-13 07:39:33,998 autoreload 24360 140646170987456 Watching for file changes with StatReloader
+WARNING 2026-07-13 07:39:37,064 log 24360 140644618577600 Not Found: /
+WARNING 2026-07-13 07:39:37,065 runserver 24360 140644641142464 [33mHTTP GET / 404 [0.02, 127.0.0.1:42826][0m
+WARNING 2026-07-13 07:39:37,121 log 24360 140644618577600 Not Found: /favicon.ico
+WARNING 2026-07-13 07:39:37,122 runserver 24360 140644641142464 [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:42826][0m
+INFO 2026-07-13 07:39:43,593 runserver 24360 140644641142464 [32mHTTP GET /admin 301 [0.01, 127.0.0.1:42826][0m
+INFO 2026-07-13 07:39:43,617 runserver 24360 140644641142464 [32mHTTP GET /admin/ 302 [0.02, 127.0.0.1:42826][0m
+INFO 2026-07-13 07:39:43,638 runserver 24360 140644641142464 [mHTTP GET /admin/login/?next=/admin/ 200 [0.02, 127.0.0.1:42826][0m
+INFO 2026-07-13 07:39:43,671 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:42836][0m
+INFO 2026-07-13 07:39:43,672 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:43,673 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:42826][0m
+INFO 2026-07-13 07:39:43,673 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/login.css 200 [0.01, 127.0.0.1:37924][0m
+INFO 2026-07-13 07:39:43,674 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/responsive.css 200 [0.01, 127.0.0.1:37934][0m
+INFO 2026-07-13 07:39:43,680 runserver 24360 140644641142464 [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:37924][0m
+INFO 2026-07-13 07:39:43,680 runserver 24360 140644641142464 [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:47,691 runserver 24360 140644641142464 [32mHTTP POST /admin/login/?next=/admin/ 302 [0.16, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:47,722 runserver 24360 140644641142464 [mHTTP GET /admin/ 200 [0.03, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:47,730 runserver 24360 140644641142464 [mHTTP GET /static/admin/css/dashboard.css 200 [0.00, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:47,742 runserver 24360 140644641142464 [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:37916][0m
+INFO 2026-07-13 07:39:47,743 runserver 24360 140644641142464 [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.00, 127.0.0.1:37924][0m
+ERROR 2026-07-13 07:39:55,591 log 24360 140644372690624 Internal Server Error: /admin/downloads/downloadfile/add/
+Traceback (most recent call last):
+  File "/home/zrex/.local/lib/python3.14/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/asgiref/sync.py", line 557, in thread_handler
+    raise exc_info[1]
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/core/handlers/base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+        response.render, thread_sensitive=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )()
+    ^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/asgiref/sync.py", line 506, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/usr/lib64/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/home/zrex/.local/lib/python3.14/site-packages/asgiref/sync.py", line 561, in thread_handler
+    return func(*args, **kwargs)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/library.py", line 271, in render
+    new_context = context.new(_dict)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/context.py", line 273, in new
+    new_context = super().new(values)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/context.py", line 110, in new
+    new_context = copy(self)
+  File "/usr/lib64/python3.14/copy.py", line 82, in copy
+    return copier(x)
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/context.py", line 158, in __copy__
+    duplicate = super().__copy__()
+  File "/home/zrex/.local/lib/python3.14/site-packages/django/template/context.py", line 39, in __copy__
+    duplicate.dicts = self.dicts[:]
+    ^^^^^^^^^^^^^^^
+AttributeError: 'super' object has no attribute 'dicts' and no __dict__ for setting new attributes
+ERROR 2026-07-13 07:39:55,598 runserver 24360 140644641142464 [35;1mHTTP GET /admin/downloads/downloadfile/add/ 500 [0.14, 127.0.0.1:37924][0m
+INFO 2026-07-13 07:39:59,712 runserver 24360 140644641142464 [mHTTP GET /admin/ 200 [0.02, 127.0.0.1:37924][0m
+WARNING 2026-07-13 07:40:08,332 log 24360 140644355905216 Not Found: /
+WARNING 2026-07-13 07:40:08,332 runserver 24360 140644641142464 [33mHTTP GET / 404 [0.01, 127.0.0.1:37924][0m
+INFO 2026-07-13 07:40:10,341 runserver 24360 140644641142464 [mHTTP GET /admin/ 200 [0.02, 127.0.0.1:37924][0m
+INFO 2026-07-13 07:45:25,515 autoreload 24360 140646170987456 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/settings.py changed, reloading.
+INFO 2026-07-13 07:45:26,244 autoreload 24706 140048055569344 Watching for file changes with StatReloader
+INFO 2026-07-13 07:47:35,091 autoreload 24706 140048055569344 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/__init__.py changed, reloading.
+INFO 2026-07-13 07:47:35,817 autoreload 25236 139958376303552 Watching for file changes with StatReloader
+INFO 2026-07-13 07:47:57,476 autoreload 25236 139958376303552 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/models.py changed, reloading.
+INFO 2026-07-13 07:47:58,149 autoreload 25276 139657653529536 Watching for file changes with StatReloader
+INFO 2026-07-13 07:48:15,437 autoreload 25276 139657653529536 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/models.py changed, reloading.
+INFO 2026-07-13 07:48:16,123 autoreload 25290 140101601283008 Watching for file changes with StatReloader
+INFO 2026-07-13 07:48:27,496 autoreload 25290 140101601283008 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/history/models.py changed, reloading.
+INFO 2026-07-13 07:48:28,224 autoreload 25295 139747948444608 Watching for file changes with StatReloader
+INFO 2026-07-13 07:48:43,634 autoreload 25295 139747948444608 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/notifications/models.py changed, reloading.
+INFO 2026-07-13 07:48:44,319 autoreload 25309 140134290111424 Watching for file changes with StatReloader
+INFO 2026-07-13 07:48:55,679 autoreload 25309 140134290111424 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/analytics/models.py changed, reloading.
+INFO 2026-07-13 07:48:56,368 autoreload 25313 139773585927104 Watching for file changes with StatReloader
+INFO 2026-07-13 07:49:30,047 autoreload 25313 139773585927104 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/tasks.py changed, reloading.
+INFO 2026-07-13 07:49:30,732 autoreload 25331 139777297705920 Watching for file changes with StatReloader
+INFO 2026-07-13 07:49:53,193 autoreload 25331 139777297705920 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 07:49:53,863 autoreload 25345 139673249631168 Watching for file changes with StatReloader
+INFO 2026-07-13 07:53:33,535 autoreload 25345 139673249631168 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/history/views.py changed, reloading.
+INFO 2026-07-13 07:53:34,228 autoreload 26380 140486919838656 Watching for file changes with StatReloader
+INFO 2026-07-13 08:07:14,704 autoreload 26380 140486919838656 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/analytics/admin.py changed, reloading.
+INFO 2026-07-13 08:07:15,394 autoreload 28297 140555429415872 Watching for file changes with StatReloader
+INFO 2026-07-13 08:07:16,627 autoreload 28297 140555429415872 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/admin.py changed, reloading.
+INFO 2026-07-13 08:07:17,291 autoreload 28311 140406206983104 Watching for file changes with StatReloader
+INFO 2026-07-13 08:07:18,521 autoreload 28311 140406206983104 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/history/admin.py changed, reloading.
+INFO 2026-07-13 08:07:19,257 autoreload 28314 140204930337728 Watching for file changes with StatReloader
+INFO 2026-07-13 08:07:20,488 autoreload 28314 140204930337728 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/notifications/admin.py changed, reloading.
+INFO 2026-07-13 08:07:21,179 autoreload 28317 139922721217472 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:12:42,061 log 28628 139692166163392 Forbidden: /api/system/dependencies
+WARNING 2026-07-13 08:12:42,063 log 28628 139692166163392 Forbidden: /api/system/status
+INFO 2026-07-13 08:13:13,891 autoreload 28317 139922721217472 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/system/views.py changed, reloading.
+INFO 2026-07-13 08:13:14,614 autoreload 28658 140671355841472 Watching for file changes with StatReloader
+INFO 2026-07-13 08:13:34,168 autoreload 28658 140671355841472 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/system/views.py changed, reloading.
+INFO 2026-07-13 08:13:34,773 autoreload 28672 140701166418880 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:14:02,486 log 28759 140167228201920 Forbidden: /api/settings/
+WARNING 2026-07-13 08:14:02,487 log 28759 140167228201920 Forbidden: /api/settings/
+WARNING 2026-07-13 08:14:02,489 log 28759 140167228201920 Forbidden: /api/settings/
+INFO 2026-07-13 08:14:42,037 autoreload 28672 140701166418880 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/settings/views.py changed, reloading.
+INFO 2026-07-13 08:14:42,599 autoreload 28803 139882048281536 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:14:59,663 log 28822 139842781334464 Bad Request: /api/settings/
+INFO 2026-07-13 08:23:07,643 autoreload 28803 139882048281536 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/urls.py changed, reloading.
+INFO 2026-07-13 08:23:08,224 autoreload 29138 140458228222912 Watching for file changes with StatReloader
+INFO 2026-07-13 08:24:05,289 autoreload 29138 140458228222912 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/serializers.py changed, reloading.
+INFO 2026-07-13 08:24:05,897 autoreload 29169 140223979056064 Watching for file changes with StatReloader
+INFO 2026-07-13 08:25:02,967 autoreload 29169 140223979056064 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 08:25:03,569 autoreload 29205 140057170934720 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:26:30,480 log 29262 140619002371008 Bad Request: /api/settings/
+INFO 2026-07-13 08:31:04,726 autoreload 29967 140485561220032 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:33:02,164 log 30234 140613989968832 Bad Request: /api/settings/
+INFO 2026-07-13 08:33:53,538 autoreload 30338 140539866885056 Watching for file changes with StatReloader
+INFO 2026-07-13 08:34:07,395 runserver 30338 140539513009856 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:50378][0m
+INFO 2026-07-13 08:34:07,401 runserver 30338 140539513009856 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:50388][0m
+INFO 2026-07-13 08:34:26,501 runserver 30338 140539513009856 [mHTTP POST /api/downloads/analyze 200 [19.10, 127.0.0.1:50402][0m
+INFO 2026-07-13 08:34:26,516 runserver 30338 140539513009856 [mHTTP POST /api/downloads/start 201 [0.01, 127.0.0.1:37602][0m
+INFO 2026-07-13 08:34:26,533 runserver 30338 140539513009856 [mHTTP GET /api/downloads/8090e9af-2a9e-42ec-8c29-10e043da5cc5 200 [0.02, 127.0.0.1:37606][0m
+INFO 2026-07-13 08:36:27,253 runserver 30338 140539513009856 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:37036][0m
+INFO 2026-07-13 08:36:27,257 runserver 30338 140539513009856 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:37038][0m
+INFO 2026-07-13 08:36:33,835 runserver 30338 140539513009856 [mHTTP POST /api/downloads/analyze 200 [6.58, 127.0.0.1:37054][0m
+INFO 2026-07-13 08:36:33,847 runserver 30338 140539513009856 [mHTTP POST /api/downloads/start 201 [0.01, 127.0.0.1:52372][0m
+INFO 2026-07-13 08:36:33,862 runserver 30338 140539513009856 [mHTTP GET /api/downloads/42c7165e-331a-4b37-a1c1-2e7d1e6f3034 200 [0.01, 127.0.0.1:52376][0m
+INFO 2026-07-13 08:39:00,050 runserver 30338 140539513009856 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:47304][0m
+INFO 2026-07-13 08:39:00,059 runserver 30338 140539513009856 [mHTTP GET /api/system/status 200 [0.01, 127.0.0.1:47312][0m
+INFO 2026-07-13 08:39:11,146 runserver 30338 140539513009856 [mHTTP POST /api/downloads/analyze 200 [11.08, 127.0.0.1:47324][0m
+INFO 2026-07-13 08:39:11,160 runserver 30338 140539513009856 [mHTTP POST /api/downloads/start 201 [0.01, 127.0.0.1:48124][0m
+INFO 2026-07-13 08:39:11,175 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:48128][0m
+INFO 2026-07-13 08:39:12,190 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:48138][0m
+INFO 2026-07-13 08:39:13,207 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:48154][0m
+INFO 2026-07-13 08:39:14,229 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.02, 127.0.0.1:48160][0m
+INFO 2026-07-13 08:39:15,263 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:48168][0m
+INFO 2026-07-13 08:39:16,293 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:48172][0m
+INFO 2026-07-13 08:39:17,327 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:48184][0m
+INFO 2026-07-13 08:39:18,365 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:48188][0m
+INFO 2026-07-13 08:39:19,397 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:59884][0m
+INFO 2026-07-13 08:39:20,419 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.02, 127.0.0.1:59894][0m
+INFO 2026-07-13 08:39:21,458 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:59908][0m
+INFO 2026-07-13 08:39:22,490 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:59914][0m
+INFO 2026-07-13 08:39:23,525 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:59930][0m
+INFO 2026-07-13 08:39:24,558 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:59932][0m
+INFO 2026-07-13 08:39:25,573 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:59938][0m
+INFO 2026-07-13 08:39:26,599 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.02, 127.0.0.1:59944][0m
+INFO 2026-07-13 08:39:27,615 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:59950][0m
+INFO 2026-07-13 08:39:28,630 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.01, 127.0.0.1:59962][0m
+INFO 2026-07-13 08:39:29,658 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.02, 127.0.0.1:51910][0m
+INFO 2026-07-13 08:39:30,686 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.02, 127.0.0.1:51926][0m
+INFO 2026-07-13 08:39:31,721 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51934][0m
+INFO 2026-07-13 08:39:32,759 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51950][0m
+INFO 2026-07-13 08:39:33,795 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51960][0m
+INFO 2026-07-13 08:39:34,833 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51976][0m
+INFO 2026-07-13 08:39:35,871 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51992][0m
+INFO 2026-07-13 08:39:36,911 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.04, 127.0.0.1:51994][0m
+INFO 2026-07-13 08:39:37,945 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:52010][0m
+INFO 2026-07-13 08:39:38,984 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51136][0m
+INFO 2026-07-13 08:39:40,021 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51152][0m
+INFO 2026-07-13 08:39:41,058 runserver 30338 140539513009856 [mHTTP GET /api/downloads/fce0add7-43b9-4c34-97ec-221508ca6fbf 200 [0.03, 127.0.0.1:51156][0m
+INFO 2026-07-13 08:41:02,947 runserver 30338 140539513009856 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:33616][0m
+INFO 2026-07-13 08:41:02,952 runserver 30338 140539513009856 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:33618][0m
+INFO 2026-07-13 08:41:13,488 runserver 30338 140539513009856 [mHTTP POST /api/downloads/analyze 200 [10.53, 127.0.0.1:33622][0m
+INFO 2026-07-13 08:41:13,516 runserver 30338 140539513009856 [mHTTP POST /api/downloads/start 201 [0.02, 127.0.0.1:46862][0m
+INFO 2026-07-13 08:41:13,537 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.02, 127.0.0.1:46870][0m
+INFO 2026-07-13 08:41:14,555 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.02, 127.0.0.1:46876][0m
+INFO 2026-07-13 08:41:15,569 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.01, 127.0.0.1:46886][0m
+INFO 2026-07-13 08:41:16,603 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:46900][0m
+INFO 2026-07-13 08:41:17,640 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:46916][0m
+INFO 2026-07-13 08:41:18,671 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:46928][0m
+INFO 2026-07-13 08:41:19,709 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53194][0m
+INFO 2026-07-13 08:41:20,749 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53208][0m
+INFO 2026-07-13 08:41:21,780 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53214][0m
+INFO 2026-07-13 08:41:22,817 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53220][0m
+INFO 2026-07-13 08:41:23,856 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53226][0m
+INFO 2026-07-13 08:41:24,896 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53236][0m
+INFO 2026-07-13 08:41:25,936 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53238][0m
+INFO 2026-07-13 08:41:26,977 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.04, 127.0.0.1:53248][0m
+INFO 2026-07-13 08:41:28,009 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:53254][0m
+INFO 2026-07-13 08:41:29,048 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:45200][0m
+INFO 2026-07-13 08:41:30,086 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:45204][0m
+INFO 2026-07-13 08:41:31,125 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:45218][0m
+INFO 2026-07-13 08:41:32,148 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.02, 127.0.0.1:45228][0m
+INFO 2026-07-13 08:41:33,163 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.01, 127.0.0.1:45234][0m
+INFO 2026-07-13 08:41:34,192 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.02, 127.0.0.1:45238][0m
+INFO 2026-07-13 08:41:35,211 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.01, 127.0.0.1:45254][0m
+INFO 2026-07-13 08:41:36,249 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:45270][0m
+INFO 2026-07-13 08:41:37,288 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.04, 127.0.0.1:45280][0m
+INFO 2026-07-13 08:41:38,327 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:45290][0m
+INFO 2026-07-13 08:41:39,366 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:33620][0m
+INFO 2026-07-13 08:41:40,398 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:33632][0m
+INFO 2026-07-13 08:41:41,430 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:33638][0m
+INFO 2026-07-13 08:41:42,469 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:33648][0m
+INFO 2026-07-13 08:41:43,503 runserver 30338 140539513009856 [mHTTP GET /api/downloads/f0cc4782-e420-4617-be3a-30419aa5f1a6 200 [0.03, 127.0.0.1:33652][0m
+INFO 2026-07-13 08:49:36,415 autoreload 35635 140139673299904 Watching for file changes with StatReloader
+INFO 2026-07-13 08:49:38,497 autoreload 35635 140139673299904 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/urls.py changed, reloading.
+INFO 2026-07-13 08:49:39,329 autoreload 35655 140126616685504 Watching for file changes with StatReloader
+INFO 2026-07-13 08:50:10,573 autoreload 35655 140126616685504 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 08:50:11,347 autoreload 35685 139834401008576 Watching for file changes with StatReloader
+WARNING 2026-07-13 08:51:06,314 log 35766 140650233424832 Bad Request: /api/settings/
+INFO 2026-07-13 08:52:21,424 runserver 35685 139834047854272 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:38334][0m
+INFO 2026-07-13 08:52:21,429 runserver 35685 139834047854272 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:38338][0m
+INFO 2026-07-13 08:52:28,148 runserver 35685 139834047854272 [mHTTP POST /api/downloads/analyze 200 [6.72, 127.0.0.1:38340][0m
+INFO 2026-07-13 09:21:38,304 autoreload 5040 140425885887424 Watching for file changes with StatReloader
+WARNING 2026-07-13 09:33:02,879 log 6693 140450165636032 Bad Request: /api/settings/
+INFO 2026-07-13 09:35:09,355 autoreload 5040 140425885887424 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/models.py changed, reloading.
+INFO 2026-07-13 09:35:10,258 autoreload 6782 139661342206912 Watching for file changes with StatReloader
+INFO 2026-07-13 09:37:01,793 autoreload 6782 139661342206912 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/services/engine.py changed, reloading.
+INFO 2026-07-13 09:37:02,621 autoreload 6919 139991335553984 Watching for file changes with StatReloader
+INFO 2026-07-13 09:38:10,461 autoreload 6919 139991335553984 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/tasks.py changed, reloading.
+INFO 2026-07-13 09:38:11,292 autoreload 6978 140499364015040 Watching for file changes with StatReloader
+INFO 2026-07-13 09:38:36,184 autoreload 6978 140499364015040 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/serializers.py changed, reloading.
+INFO 2026-07-13 09:38:36,988 autoreload 7296 139780189526976 Watching for file changes with StatReloader
+INFO 2026-07-13 09:40:17,331 autoreload 7296 139780189526976 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 09:40:18,116 autoreload 7407 140671330347968 Watching for file changes with StatReloader
+INFO 2026-07-13 09:40:36,858 autoreload 7407 140671330347968 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/urls.py changed, reloading.
+INFO 2026-07-13 09:40:37,717 autoreload 7456 140602518813632 Watching for file changes with StatReloader
+INFO 2026-07-13 09:40:57,537 autoreload 7456 140602518813632 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/urls.py changed, reloading.
+INFO 2026-07-13 09:40:58,363 autoreload 7505 139708207741888 Watching for file changes with StatReloader
+INFO 2026-07-13 09:41:26,307 autoreload 7505 139708207741888 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/apps.py changed, reloading.
+INFO 2026-07-13 09:41:27,214 autoreload 7553 139829770787776 Watching for file changes with StatReloader
+WARNING 2026-07-13 09:41:52,411 log 7604 139822275603392 Bad Request: /api/settings/
+WARNING 2026-07-13 09:43:31,362 log 7684 140014118554560 Gone: /api/downloads/download/f9886977-d8e2-4c52-abc6-adbcd87eed64/
+WARNING 2026-07-13 09:43:31,369 log 7684 140014118554560 Range Not Satisfiable: /api/downloads/download/2e6096ed-e288-447d-aee8-076c3ad59a11/
+WARNING 2026-07-13 09:43:31,372 log 7684 140014118554560 Not Found: /api/downloads/download/f8cdd11b-bbae-459f-b4d7-2187404093b3/
+WARNING 2026-07-13 09:43:31,376 log 7684 140014118554560 Bad Request: /api/extract
+WARNING 2026-07-13 09:43:31,379 log 7684 140014118554560 Bad Request: /api/extract
+WARNING 2026-07-13 09:43:31,391 log 7684 140014118554560 Not Found: /api/downloads/jobs/4a331b41-a7f7-4a34-8735-ff30ffede9eb/
+WARNING 2026-07-13 09:43:31,401 log 7684 140014118554560 Not Found: /api/download
+WARNING 2026-07-13 09:43:31,404 log 7684 140014118554560 Not Found: /api/download
+WARNING 2026-07-13 09:43:31,484 log 7684 140014118554560 Bad Request: /api/settings/
+WARNING 2026-07-13 09:45:41,609 log 7776 139647391910848 Gone: /api/downloads/download/ce9eccf1-e3e1-4c2b-850e-6c2faa5dc7b3/
+WARNING 2026-07-13 09:45:41,616 log 7776 139647391910848 Range Not Satisfiable: /api/downloads/download/51ce361d-5a67-45d9-a24a-961376b7c113/
+WARNING 2026-07-13 09:45:41,619 log 7776 139647391910848 Not Found: /api/downloads/download/0d577a53-f00c-4111-8ac4-1c172c362c68/
+WARNING 2026-07-13 09:45:41,625 log 7776 139647391910848 Bad Request: /api/extract
+WARNING 2026-07-13 09:45:41,632 log 7776 139647391910848 Bad Request: /api/extract
+WARNING 2026-07-13 09:45:41,640 log 7776 139647391910848 Not Found: /api/downloads/jobs/c44df7cd-9e55-4db2-bf3a-ef9bad91abfc/
+WARNING 2026-07-13 09:45:41,655 log 7776 139647391910848 Not Found: /api/download
+WARNING 2026-07-13 09:45:41,659 log 7776 139647391910848 Not Found: /api/download
+WARNING 2026-07-13 09:45:41,742 log 7776 139647391910848 Bad Request: /api/settings/
+INFO 2026-07-13 09:51:28,868 autoreload 8571 140243273026496 Watching for file changes with StatReloader
+INFO 2026-07-13 09:52:30,967 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:58548][0m
+INFO 2026-07-13 09:52:30,974 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:58552][0m
+INFO 2026-07-13 09:52:52,751 runserver 8571 140241740490432 [mHTTP POST /api/extract 200 [21.77, 127.0.0.1:58566][0m
+INFO 2026-07-13 09:53:06,867 runserver 8571 140241740490432 [mHTTP POST /api/download 202 [0.04, 127.0.0.1:46734][0m
+INFO 2026-07-13 09:53:06,900 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/2a9cad36-5653-4772-bb53-cb29261e616f/ 200 [0.03, 127.0.0.1:46742][0m
+INFO 2026-07-13 09:56:04,351 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:40342][0m
+INFO 2026-07-13 09:56:04,362 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.01, 127.0.0.1:40344][0m
+INFO 2026-07-13 09:56:08,050 runserver 8571 140241740490432 [mHTTP POST /api/extract 200 [3.68, 127.0.0.1:40350][0m
+INFO 2026-07-13 09:56:13,962 runserver 8571 140241740490432 [mHTTP POST /api/download 202 [0.02, 127.0.0.1:60580][0m
+INFO 2026-07-13 09:56:13,989 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.02, 127.0.0.1:60584][0m
+INFO 2026-07-13 09:56:16,021 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:60600][0m
+INFO 2026-07-13 09:56:18,037 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.01, 127.0.0.1:60614][0m
+INFO 2026-07-13 09:56:20,070 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:60618][0m
+INFO 2026-07-13 09:56:22,103 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:41600][0m
+INFO 2026-07-13 09:56:24,135 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:41614][0m
+INFO 2026-07-13 09:56:26,167 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:41618][0m
+INFO 2026-07-13 09:56:28,199 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:41620][0m
+INFO 2026-07-13 09:56:30,233 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.03, 127.0.0.1:41626][0m
+INFO 2026-07-13 09:57:04,826 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/c843ac1c-e31a-4863-803c-2b1c531413c7/ 206 [0.03, 127.0.0.1:38838][0m
+INFO 2026-07-13 09:57:04,875 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/c843ac1c-e31a-4863-803c-2b1c531413c7/ 200 [0.05, 127.0.0.1:38840][0m
+INFO 2026-07-13 09:57:16,274 runserver 8571 140241740490432 [mHTTP POST /api/downloads/analyze 200 [3.78, 127.0.0.1:57072][0m
+INFO 2026-07-13 10:01:18,274 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:40346][0m
+INFO 2026-07-13 10:01:18,288 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.01, 127.0.0.1:40360][0m
+INFO 2026-07-13 10:01:23,648 runserver 8571 140241740490432 [mHTTP POST /api/extract 200 [5.36, 127.0.0.1:40362][0m
+INFO 2026-07-13 10:01:31,027 runserver 8571 140241740490432 [mHTTP POST /api/download 202 [0.04, 127.0.0.1:58912][0m
+INFO 2026-07-13 10:01:31,060 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:58914][0m
+INFO 2026-07-13 10:01:33,092 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:54182][0m
+INFO 2026-07-13 10:01:35,124 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:54184][0m
+INFO 2026-07-13 10:01:37,158 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:54188][0m
+INFO 2026-07-13 10:01:39,189 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:54204][0m
+INFO 2026-07-13 10:01:41,205 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.01, 127.0.0.1:54214][0m
+INFO 2026-07-13 10:01:43,221 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.01, 127.0.0.1:60110][0m
+INFO 2026-07-13 10:01:45,239 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.02, 127.0.0.1:60124][0m
+INFO 2026-07-13 10:01:47,254 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.01, 127.0.0.1:60138][0m
+INFO 2026-07-13 10:01:49,287 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.03, 127.0.0.1:60152][0m
+INFO 2026-07-13 10:01:51,945 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 206 [0.03, 127.0.0.1:52612][0m
+INFO 2026-07-13 10:01:52,002 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/3d5e1f94-edae-4e22-8fa6-957e058d5b59/ 200 [0.05, 127.0.0.1:52616][0m
+INFO 2026-07-13 10:04:56,009 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:49546][0m
+INFO 2026-07-13 10:04:56,014 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:49550][0m
+INFO 2026-07-13 10:04:58,670 runserver 8571 140241740490432 [mHTTP POST /api/extract 200 [2.65, 127.0.0.1:49566][0m
+INFO 2026-07-13 10:05:11,990 runserver 8571 140241740490432 [mHTTP POST /api/download 202 [0.02, 127.0.0.1:38972][0m
+INFO 2026-07-13 10:05:12,010 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.02, 127.0.0.1:38988][0m
+INFO 2026-07-13 10:05:14,036 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.02, 127.0.0.1:38994][0m
+INFO 2026-07-13 10:05:16,068 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.03, 127.0.0.1:39008][0m
+INFO 2026-07-13 10:05:18,099 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.03, 127.0.0.1:39014][0m
+INFO 2026-07-13 10:05:20,115 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.01, 127.0.0.1:39030][0m
+INFO 2026-07-13 10:05:22,131 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.01, 127.0.0.1:57156][0m
+INFO 2026-07-13 10:05:24,147 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.01, 127.0.0.1:57158][0m
+INFO 2026-07-13 10:05:26,164 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.01, 127.0.0.1:57160][0m
+INFO 2026-07-13 10:05:28,195 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/cf1ff333-e0d7-430f-baff-49267bb893c7/ 200 [0.03, 127.0.0.1:57176][0m
+INFO 2026-07-13 10:06:40,225 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:44854][0m
+INFO 2026-07-13 10:06:40,231 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:44860][0m
+INFO 2026-07-13 10:07:59,127 runserver 8571 140241740490432 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:39438][0m
+INFO 2026-07-13 10:07:59,132 runserver 8571 140241740490432 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:39450][0m
+INFO 2026-07-13 10:08:02,051 runserver 8571 140241740490432 [mHTTP POST /api/extract 200 [2.92, 127.0.0.1:39460][0m
+INFO 2026-07-13 10:08:15,123 runserver 8571 140241740490432 [mHTTP POST /api/download 202 [0.03, 127.0.0.1:47686][0m
+INFO 2026-07-13 10:08:15,157 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.03, 127.0.0.1:47696][0m
+INFO 2026-07-13 10:08:17,192 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.03, 127.0.0.1:47710][0m
+INFO 2026-07-13 10:08:19,227 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.03, 127.0.0.1:47722][0m
+INFO 2026-07-13 10:08:21,261 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.03, 127.0.0.1:47734][0m
+INFO 2026-07-13 10:08:23,300 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.03, 127.0.0.1:37006][0m
+INFO 2026-07-13 10:08:25,319 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.02, 127.0.0.1:37018][0m
+INFO 2026-07-13 10:08:27,337 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.02, 127.0.0.1:37028][0m
+INFO 2026-07-13 10:08:29,354 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.01, 127.0.0.1:37038][0m
+INFO 2026-07-13 10:08:31,373 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.02, 127.0.0.1:37052][0m
+INFO 2026-07-13 10:08:33,392 runserver 8571 140241740490432 [mHTTP GET /api/downloads/jobs/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.02, 127.0.0.1:57802][0m
+INFO 2026-07-13 10:08:38,305 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 206 [0.03, 127.0.0.1:57810][0m
+INFO 2026-07-13 10:08:38,328 runserver 8571 140241740490432 [mHTTP GET /api/downloads/download/d01b881c-8921-4f5b-bbe9-6adec081cf80/ 200 [0.02, 127.0.0.1:57814][0m
+ERROR 2026-07-13 10:08:41,504 log 8571 140241719654080 Bad Gateway: /api/downloads/stream/d01b881c-8921-4f5b-bbe9-6adec081cf80/139/
+ERROR 2026-07-13 10:08:41,506 runserver 8571 140241740490432 [35;1mHTTP GET /api/downloads/stream/d01b881c-8921-4f5b-bbe9-6adec081cf80/139/ 502 [3.10, 127.0.0.1:57830][0m
+INFO 2026-07-13 10:10:48,495 autoreload 13731 140706391419840 Watching for file changes with StatReloader
+INFO 2026-07-13 10:20:10,388 runserver 13731 140706028971712 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:46064][0m
+INFO 2026-07-13 10:20:10,395 runserver 13731 140706028971712 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:46070][0m
+INFO 2026-07-13 10:20:13,582 runserver 13731 140706028971712 [mHTTP POST /api/extract 200 [3.18, 127.0.0.1:46084][0m
+INFO 2026-07-13 10:20:46,507 runserver 13731 140706028971712 [mHTTP POST /api/download 202 [0.02, 127.0.0.1:38610][0m
+INFO 2026-07-13 10:20:46,535 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:38614][0m
+INFO 2026-07-13 10:20:48,571 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.03, 127.0.0.1:38630][0m
+INFO 2026-07-13 10:20:50,608 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.03, 127.0.0.1:38632][0m
+INFO 2026-07-13 10:20:52,641 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.03, 127.0.0.1:41736][0m
+INFO 2026-07-13 10:20:54,662 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:41744][0m
+INFO 2026-07-13 10:20:56,682 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:41750][0m
+INFO 2026-07-13 10:20:58,703 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:41758][0m
+INFO 2026-07-13 10:21:00,727 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:41760][0m
+INFO 2026-07-13 10:21:02,747 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:44602][0m
+INFO 2026-07-13 10:21:04,767 runserver 13731 140706028971712 [mHTTP GET /api/downloads/jobs/70426cc0-2c72-4964-b599-374aeb6253ad/ 200 [0.02, 127.0.0.1:44604][0m
+INFO 2026-07-13 10:34:14,880 autoreload 15909 140145287158720 Watching for file changes with StatReloader
+INFO 2026-07-13 10:34:39,428 autoreload 15909 140145287158720 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/services/engine.py changed, reloading.
+INFO 2026-07-13 10:34:40,291 autoreload 15974 140082127829952 Watching for file changes with StatReloader
+INFO 2026-07-13 10:35:06,029 autoreload 15974 140082127829952 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/tasks.py changed, reloading.
+INFO 2026-07-13 10:35:06,902 autoreload 16023 139871209069504 Watching for file changes with StatReloader
+INFO 2026-07-13 10:35:32,570 autoreload 16023 139871209069504 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 10:35:33,457 autoreload 16070 140271055592384 Watching for file changes with StatReloader
+WARNING 2026-07-13 10:35:57,055 log 16130 140549897817024 Gone: /api/downloads/download/fc03ecdc-4364-40cc-9466-ddb5ee03896d/
+WARNING 2026-07-13 10:35:57,060 log 16130 140549897817024 Range Not Satisfiable: /api/downloads/download/70bcf929-95d0-47e5-a179-b9d543bef4cd/
+WARNING 2026-07-13 10:35:57,571 log 16130 140549897817024 Bad Request: /api/extract
+WARNING 2026-07-13 10:35:57,576 log 16130 140549897817024 Bad Request: /api/extract
+WARNING 2026-07-13 10:35:57,581 log 16130 140549897817024 Not Found: /api/downloads/jobs/f0cdb630-ba92-42e1-bfb2-23067fd96c8f/
+WARNING 2026-07-13 10:35:57,589 log 16130 140549897817024 Not Found: /api/download
+WARNING 2026-07-13 10:35:57,592 log 16130 140549897817024 Not Found: /api/download
+WARNING 2026-07-13 10:35:57,660 log 16130 140549897817024 Bad Request: /api/settings/
+INFO 2026-07-13 10:36:34,827 autoreload 16070 140271055592384 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 10:36:35,706 autoreload 16179 140294769982400 Watching for file changes with StatReloader
+WARNING 2026-07-13 10:37:20,708 log 16244 139804049152960 Gone: /api/downloads/download/005addab-5563-47ae-ab2a-914076e8d826/
+WARNING 2026-07-13 10:37:20,715 log 16244 139804049152960 Range Not Satisfiable: /api/downloads/download/3cd057b7-3cf0-4690-a5e6-21027ae6d575/
+WARNING 2026-07-13 10:37:21,226 log 16244 139804049152960 Bad Request: /api/extract
+WARNING 2026-07-13 10:37:21,228 log 16244 139804049152960 Bad Request: /api/extract
+WARNING 2026-07-13 10:37:21,241 log 16244 139804049152960 Not Found: /api/downloads/jobs/f5bf10fd-edcb-4086-9f21-d939377e1e2c/
+WARNING 2026-07-13 10:37:21,250 log 16244 139804049152960 Not Found: /api/download
+WARNING 2026-07-13 10:37:21,253 log 16244 139804049152960 Not Found: /api/download
+WARNING 2026-07-13 10:37:21,322 log 16244 139804049152960 Bad Request: /api/settings/
+INFO 2026-07-13 10:41:21,316 runserver 16179 140294408365760 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:52512][0m
+INFO 2026-07-13 10:41:21,320 runserver 16179 140294408365760 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:52520][0m
+INFO 2026-07-13 10:41:26,599 runserver 16179 140294408365760 [mHTTP POST /api/extract 200 [5.28, 127.0.0.1:52530][0m
+INFO 2026-07-13 10:44:42,607 runserver 16179 140294408365760 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:46710][0m
+INFO 2026-07-13 10:44:42,611 runserver 16179 140294408365760 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:54220][0m
+INFO 2026-07-13 10:46:56,260 autoreload 17462 139738517556160 Watching for file changes with StatReloader
+INFO 2026-07-13 10:47:01,340 runserver 17462 139738155574976 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:34920][0m
+INFO 2026-07-13 10:47:01,344 runserver 17462 139738155574976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:34934][0m
+INFO 2026-07-13 10:48:22,158 runserver 17462 139738155574976 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:36068][0m
+INFO 2026-07-13 10:48:22,163 runserver 17462 139738155574976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:36078][0m
+INFO 2026-07-13 10:48:25,345 runserver 17462 139738155574976 [mHTTP POST /api/extract 200 [3.18, 127.0.0.1:36086][0m
+INFO 2026-07-13 10:48:43,733 runserver 17462 139738155574976 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:43948][0m
+INFO 2026-07-13 10:48:43,738 runserver 17462 139738155574976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:43954][0m
+INFO 2026-07-13 10:48:46,622 runserver 17462 139738155574976 [mHTTP POST /api/extract 200 [2.88, 127.0.0.1:43956][0m
+INFO 2026-07-13 10:53:48,176 runserver 17462 139738155574976 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:49008][0m
+INFO 2026-07-13 10:53:48,180 runserver 17462 139738155574976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:49024][0m
+INFO 2026-07-13 10:53:56,438 runserver 17462 139738155574976 [mHTTP POST /api/extract 200 [8.26, 127.0.0.1:49036][0m
+INFO 2026-07-13 10:54:02,769 runserver 17462 139738155574976 [mHTTP POST /api/download 202 [0.03, 127.0.0.1:38068][0m
+INFO 2026-07-13 10:54:03,291 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.52, 127.0.0.1:38072][0m
+INFO 2026-07-13 10:54:04,807 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.51, 127.0.0.1:38082][0m
+INFO 2026-07-13 10:54:06,343 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:38086][0m
+INFO 2026-07-13 10:54:07,874 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:38094][0m
+INFO 2026-07-13 10:54:09,408 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:38098][0m
+INFO 2026-07-13 10:54:10,940 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:38106][0m
+INFO 2026-07-13 10:54:12,471 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:44556][0m
+INFO 2026-07-13 10:54:14,004 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:44566][0m
+INFO 2026-07-13 10:54:15,536 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.53, 127.0.0.1:44572][0m
+INFO 2026-07-13 10:54:17,053 runserver 17462 139738155574976 [mHTTP GET /api/downloads/download/88c60979-f348-444e-83ab-69d8bebdf465/ 202 [0.52, 127.0.0.1:44584][0m
+INFO 2026-07-13 11:01:02,696 autoreload 17462 139738517556160 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 11:01:03,610 autoreload 18839 140002148010944 Watching for file changes with StatReloader
+WARNING 2026-07-13 11:02:01,128 log 18918 140635257703360 Gone: /api/downloads/download/ed16dcaa-5ab7-4c32-8cb0-6b05339e92c2/
+WARNING 2026-07-13 11:02:01,133 log 18918 140635257703360 Range Not Satisfiable: /api/downloads/download/67e49655-a0c3-4bfa-9f15-06fd7ebc51af/
+WARNING 2026-07-13 11:02:31,255 log 18918 140635257703360 Bad Request: /api/extract
+WARNING 2026-07-13 11:02:31,257 log 18918 140635257703360 Bad Request: /api/extract
+WARNING 2026-07-13 11:02:31,267 log 18918 140635257703360 Not Found: /api/downloads/jobs/ff3d5e28-7fb0-4a16-9742-f33c1b61fc58/
+WARNING 2026-07-13 11:02:31,276 log 18918 140635257703360 Not Found: /api/download
+WARNING 2026-07-13 11:02:31,278 log 18918 140635257703360 Not Found: /api/download
+WARNING 2026-07-13 11:02:31,346 log 18918 140635257703360 Bad Request: /api/settings/
+INFO 2026-07-13 11:08:03,490 autoreload 18839 140002148010944 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/settings.py changed, reloading.
+INFO 2026-07-13 11:08:04,380 autoreload 19210 140679444863936 Watching for file changes with StatReloader
+INFO 2026-07-13 11:08:26,675 autoreload 19210 140679444863936 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/settings.py changed, reloading.
+INFO 2026-07-13 11:08:27,542 autoreload 19256 140135682399168 Watching for file changes with StatReloader
+INFO 2026-07-13 11:13:50,591 autoreload 19256 140135682399168 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/settings/models.py changed, reloading.
+INFO 2026-07-13 11:13:51,462 autoreload 19544 140406833286080 Watching for file changes with StatReloader
+INFO 2026-07-13 11:14:48,228 autoreload 19544 140406833286080 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/models.py changed, reloading.
+INFO 2026-07-13 11:14:49,112 autoreload 19643 140054744755136 Watching for file changes with StatReloader
+INFO 2026-07-13 11:14:59,185 autoreload 19643 140054744755136 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/history/models.py changed, reloading.
+INFO 2026-07-13 11:15:00,108 autoreload 19689 139977515461568 Watching for file changes with StatReloader
+WARNING 2026-07-13 11:17:34,775 log 19836 139979799391168 Gone: /api/downloads/download/6adb388e-6b8d-47f3-9f1f-ec546b5c39fc/
+WARNING 2026-07-13 11:17:34,854 log 19836 139979799391168 Range Not Satisfiable: /api/downloads/download/b5e5d089-9f2b-49ca-8c89-434d0b1ddf7e/
+WARNING 2026-07-13 11:18:05,037 log 19836 139979799391168 Bad Request: /api/extract
+WARNING 2026-07-13 11:18:05,056 log 19836 139979799391168 Bad Request: /api/extract
+WARNING 2026-07-13 11:18:05,111 log 19836 139979799391168 Not Found: /api/downloads/jobs/2d9ebcad-871e-4521-b17a-1115228ae597/
+WARNING 2026-07-13 11:18:05,169 log 19836 139979799391168 Not Found: /api/download
+WARNING 2026-07-13 11:18:05,188 log 19836 139979799391168 Not Found: /api/download
+WARNING 2026-07-13 11:18:05,717 log 19836 139979799391168 Bad Request: /api/settings/
+INFO 2026-07-13 11:22:08,138 runserver 19689 139977077814976 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:47876][0m
+INFO 2026-07-13 11:22:08,143 runserver 19689 139977077814976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:47892][0m
+INFO 2026-07-13 11:22:11,954 runserver 19689 139977077814976 [mHTTP POST /api/extract 200 [3.81, 127.0.0.1:47904][0m
+INFO 2026-07-13 11:25:30,909 runserver 19689 139977077814976 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:51282][0m
+INFO 2026-07-13 11:25:30,913 runserver 19689 139977077814976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:51284][0m
+INFO 2026-07-13 11:25:34,293 runserver 19689 139977077814976 [mHTTP POST /api/extract 200 [3.38, 127.0.0.1:51298][0m
+INFO 2026-07-13 11:25:44,212 runserver 19689 139977077814976 [mHTTP POST /api/download 202 [0.03, 127.0.0.1:43800][0m
+INFO 2026-07-13 11:26:15,913 runserver 19689 139977077814976 [mHTTP GET /api/downloads/download/7d84dd9e-d9c5-4d6f-bd89-40a0a99b3528/ 200 [31.70, 127.0.0.1:43812][0m
+INFO 2026-07-13 11:32:20,604 runserver 19689 139977077814976 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:45644][0m
+INFO 2026-07-13 11:32:20,608 runserver 19689 139977077814976 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:45646][0m
+INFO 2026-07-13 11:32:25,737 runserver 19689 139977077814976 [mHTTP POST /api/extract 200 [5.13, 127.0.0.1:45660][0m
+INFO 2026-07-13 11:45:12,572 autoreload 23680 139940385016768 Watching for file changes with StatReloader
+INFO 2026-07-13 11:45:26,116 runserver 23680 139940021135040 [mHTTP GET /api/system/version 200 [0.01, 127.0.0.1:43748][0m
+INFO 2026-07-13 11:45:26,124 runserver 23680 139940021135040 [mHTTP GET /api/system/status 200 [0.01, 127.0.0.1:43758][0m
+INFO 2026-07-13 11:45:29,538 runserver 23680 139940021135040 [mHTTP POST /api/extract 200 [3.41, 127.0.0.1:43770][0m
+INFO 2026-07-13 11:48:45,271 runserver 23680 139940021135040 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:59854][0m
+INFO 2026-07-13 11:48:45,279 runserver 23680 139940021135040 [mHTTP GET /api/system/status 200 [0.01, 127.0.0.1:59856][0m
+INFO 2026-07-13 11:48:51,379 runserver 23680 139940021135040 [mHTTP POST /api/extract 200 [6.10, 127.0.0.1:59866][0m
+INFO 2026-07-13 11:52:07,535 runserver 23680 139940021135040 [mHTTP GET /api/system/version 200 [0.00, 127.0.0.1:55732][0m
+INFO 2026-07-13 11:52:07,540 runserver 23680 139940021135040 [mHTTP GET /api/system/status 200 [0.00, 127.0.0.1:55742][0m
+INFO 2026-07-13 11:52:11,935 runserver 23680 139940021135040 [mHTTP POST /api/extract 200 [4.39, 127.0.0.1:55750][0m
+INFO 2026-07-13 11:52:19,054 runserver 23680 139940021135040 [mHTTP POST /api/download 202 [0.02, 127.0.0.1:59330][0m
+INFO 2026-07-13 11:52:45,027 runserver 23680 139940021135040 [mHTTP GET /api/downloads/download/e58a5505-4103-4b3e-89fe-2d23e60709d9/ 200 [25.97, 127.0.0.1:59340][0m
+INFO 2026-07-13 11:55:58,013 autoreload 23680 139940385016768 /run/media/zrex/Local Disk/Coding/ZFetchBackend/apps/downloads/views.py changed, reloading.
+INFO 2026-07-13 11:55:59,078 autoreload 24918 140418989710272 Watching for file changes with StatReloader
+INFO 2026-07-13 12:06:32,862 autoreload 24918 140418989710272 /run/media/zrex/Local Disk/Coding/ZFetchBackend/config/settings.py changed, reloading.

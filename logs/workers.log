@@ -1,0 +1,56 @@
+ERROR 2026-07-13 08:34:38,474 tasks 30338 140539483969216 Download task failed for job 8090e9af-2a9e-42ec-8c29-10e043da5cc5: Download terminated with return code 1
+ERROR 2026-07-13 08:45:01,053 tasks 30338 140539494459072 Download task failed for job 42c7165e-331a-4b37-a1c1-2e7d1e6f3034: Download terminated with return code 1
+ERROR 2026-07-13 08:47:00,879 tasks 30338 140539458791104 Download task failed for job fce0add7-43b9-4c34-97ec-221508ca6fbf: Download terminated with return code 1
+ERROR 2026-07-13 08:48:26,223 tasks 30338 140539475576512 Download task failed for job f0cc4782-e420-4617-be3a-30419aa5f1a6: Download terminated with return code 1
+ERROR 2026-07-13 08:49:15,506 tasks 30338 140539106158272 Download task failed for job f0cc4782-e420-4617-be3a-30419aa5f1a6: Download terminated with return code 1
+INFO 2026-07-13 09:41:27,184 apps 7553 139829770787776 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 09:41:51,741 apps 7604 139822275603392 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 09:43:30,775 apps 7684 140014118554560 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 09:45:40,991 apps 7776 139647391910848 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 09:51:28,269 apps 8566 140441878870976 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 09:51:28,842 apps 8571 140243273026496 [Scheduler] Background cleanup scheduler started (60s interval).
+ERROR 2026-07-13 09:55:43,365 tasks 8571 140241698866880 Download task failed for job 2a9cad36-5653-4772-bb53-cb29261e616f: yt-dlp terminated with return code 1
+INFO 2026-07-13 10:10:47,151 apps 13722 140313361562560 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:10:48,430 apps 13731 140706391419840 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:26:47,578 tasks 13722 140313008010944 [Cleanup] Removed file: /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/downloads/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp4
+INFO 2026-07-13 10:26:47,581 tasks 13722 140313008010944 [Cleanup] Expired job c843ac1c-e31a-4863-803c-2b1c531413c7 removed (expires=2026-07-13 10:26:29.607565+00:00)
+INFO 2026-07-13 10:26:47,592 tasks 13722 140313008010944 [Cleanup] Expired job 2a9cad36-5653-4772-bb53-cb29261e616f removed (expires=2026-07-13 10:26:14.551810+00:00)
+INFO 2026-07-13 10:31:48,910 tasks 13731 140706037364416 [Cleanup] Removed file: /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/downloads/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 10:31:48,913 tasks 13731 140706037364416 [Cleanup] Expired job 3d5e1f94-edae-4e22-8fa6-957e058d5b59 removed (expires=2026-07-13 10:31:47.638099+00:00)
+INFO 2026-07-13 10:34:14,164 apps 15907 140229013990336 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:34:14,847 apps 15909 140145287158720 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:34:40,256 apps 15974 140082127829952 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:35:06,865 apps 16023 139871209069504 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:35:33,422 apps 16070 140271055592384 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:35:56,589 apps 16130 140549897817024 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:36:14,364 tasks 15907 140228658460352 [Cleanup] Expired job cf1ff333-e0d7-430f-baff-49267bb893c7 removed (expires=2026-07-13 10:35:26.464074+00:00)
+INFO 2026-07-13 10:36:35,671 apps 16179 140294769982400 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:37:20,240 apps 16244 139804049152960 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:38:35,902 tasks 16179 140294416758464 [Cleanup] Expired job d01b881c-8921-4f5b-bbe9-6adec081cf80 removed (expires=2026-07-13 10:38:32.441093+00:00)
+INFO 2026-07-13 10:46:55,559 apps 17460 139827734969280 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:46:56,229 apps 17462 139738517556160 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 10:51:55,760 tasks 17460 139827381008064 [Cleanup] Expired job 70426cc0-2c72-4964-b599-374aeb6253ad removed (expires=2026-07-13 10:51:03.340651+00:00)
+INFO 2026-07-13 11:01:03,576 apps 18839 140002148010944 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:02:00,678 apps 18918 140635257703360 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:08:04,339 apps 19210 140679444863936 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:08:27,507 apps 19256 140135682399168 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:09:41,817 apps 19331 140199240952768 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:09:51,349 apps 19353 140016432135104 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:13:11,016 apps 19500 139711418031040 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:13:25,963 apps 19524 139701592546240 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:13:51,427 apps 19544 140406833286080 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:14:03,821 apps 19603 139964420787136 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:14:49,075 apps 19643 140054744755136 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:15:00,072 apps 19689 139977515461568 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:16:44,086 apps 19776 139644464184256 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:17:34,171 apps 19836 139979799391168 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:24:55,852 tasks 17460 139827381008064 [Cleanup] Removed file: /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/downloads/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 11:24:55,855 tasks 17460 139827381008064 [Cleanup] Expired job 88c60979-f348-444e-83ab-69d8bebdf465 removed (expires=2026-07-13 11:24:38.759496+00:00)
+INFO 2026-07-13 11:43:58,382 apps 23586 140167718362048 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:45:11,256 apps 23671 139951027919808 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:45:12,498 apps 23680 139940385016768 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:55:59,029 apps 24918 140418989710272 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 11:56:59,290 tasks 24918 140418645751488 [Cleanup] Removed file: /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/downloads/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 11:56:59,292 tasks 24918 140418645751488 [Cleanup] Expired job 7d84dd9e-d9c5-4d6f-bd89-40a0a99b3528 removed (expires=2026-07-13 11:56:22.729756+00:00)
+INFO 2026-07-13 11:59:45,265 apps 25229 140056068537280 [Scheduler] Background cleanup scheduler started (60s interval).
+INFO 2026-07-13 12:23:11,656 tasks 23671 139950672574144 [Cleanup] Expired job e58a5505-4103-4b3e-89fe-2d23e60709d9 removed (expires=2026-07-13 12:22:51.955459+00:00)

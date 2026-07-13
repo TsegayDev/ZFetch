@@ -1,0 +1,272 @@
+INFO 2026-07-10 11:24:43,876 engine 193148 140510174723008 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-10 11:24:43,877 engine 193148 140510174723008 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-10 11:24:43,877 engine 193148 140510174723008 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-10 11:24:43,877 engine 193148 140510174723008 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-10 11:24:43,881 metadata 193148 140510174723008 Successfully embedded metadata into /tmp/tmpj9024c0e.mp3
+ERROR 2026-07-10 11:24:43,882 metadata 193148 140510174723008 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-10 11:24:43,884 metadata 193148 140510174723008 Metadata embedding not supported for extension: .avi
+INFO 2026-07-10 11:27:04,517 engine 193238 140575229135808 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-10 11:27:04,517 engine 193238 140575229135808 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-10 11:27:04,517 engine 193238 140575229135808 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-10 11:27:04,518 engine 193238 140575229135808 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-10 11:27:04,522 metadata 193238 140575229135808 Successfully embedded metadata into /tmp/tmpp5aehm6f.mp3
+ERROR 2026-07-10 11:27:04,522 metadata 193238 140575229135808 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-10 11:27:04,523 metadata 193238 140575229135808 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:09:48,479 engine 28501 140502384491456 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:09:48,479 engine 28501 140502384491456 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:09:48,480 engine 28501 140502384491456 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:09:48,481 engine 28501 140502384491456 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:09:48,486 metadata 28501 140502384491456 Successfully embedded metadata into /tmp/tmp1vvja66j.mp3
+ERROR 2026-07-13 08:09:48,486 metadata 28501 140502384491456 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:09:48,487 metadata 28501 140502384491456 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:10:05,939 engine 28521 139742927436736 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:10:05,939 engine 28521 139742927436736 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:10:05,939 engine 28521 139742927436736 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:10:05,941 engine 28521 139742927436736 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:10:05,947 metadata 28521 139742927436736 Successfully embedded metadata into /tmp/tmpixp25hpn.mp3
+ERROR 2026-07-13 08:10:05,947 metadata 28521 139742927436736 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:10:05,948 metadata 28521 139742927436736 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:10:23,998 engine 28551 140058528738240 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:10:23,999 engine 28551 140058528738240 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:10:24,000 engine 28551 140058528738240 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:10:24,002 engine 28551 140058528738240 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:10:24,006 metadata 28551 140058528738240 Successfully embedded metadata into /tmp/tmp8do86qvk.mp3
+ERROR 2026-07-13 08:10:24,007 metadata 28551 140058528738240 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:10:24,007 metadata 28551 140058528738240 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:12:42,048 engine 28628 139692166163392 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:12:42,048 engine 28628 139692166163392 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:12:42,048 engine 28628 139692166163392 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:12:42,049 engine 28628 139692166163392 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:12:42,052 metadata 28628 139692166163392 Successfully embedded metadata into /tmp/tmpn4zbhgve.mp3
+ERROR 2026-07-13 08:12:42,053 metadata 28628 139692166163392 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:12:42,054 metadata 28628 139692166163392 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:14:02,471 engine 28759 140167228201920 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:14:02,471 engine 28759 140167228201920 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:14:02,471 engine 28759 140167228201920 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:14:02,472 engine 28759 140167228201920 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:14:02,476 metadata 28759 140167228201920 Successfully embedded metadata into /tmp/tmp2o7dxpgh.mp3
+ERROR 2026-07-13 08:14:02,476 metadata 28759 140167228201920 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:14:02,477 metadata 28759 140167228201920 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:14:59,637 engine 28822 139842781334464 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:14:59,638 engine 28822 139842781334464 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:14:59,638 engine 28822 139842781334464 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:14:59,639 engine 28822 139842781334464 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:14:59,644 metadata 28822 139842781334464 Successfully embedded metadata into /tmp/tmp5578xkq6.mp3
+ERROR 2026-07-13 08:14:59,645 metadata 28822 139842781334464 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:14:59,646 metadata 28822 139842781334464 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:26:30,461 engine 29262 140619002371008 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:26:30,462 engine 29262 140619002371008 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:26:30,462 engine 29262 140619002371008 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:26:30,463 engine 29262 140619002371008 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:26:30,467 metadata 29262 140619002371008 Successfully embedded metadata into /tmp/tmp6tqvj2sb.mp3
+ERROR 2026-07-13 08:26:30,467 metadata 29262 140619002371008 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:26:30,468 metadata 29262 140619002371008 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:33:02,143 engine 30234 140613989968832 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:33:02,143 engine 30234 140613989968832 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:33:02,143 engine 30234 140613989968832 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:33:02,144 engine 30234 140613989968832 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:33:02,150 metadata 30234 140613989968832 Successfully embedded metadata into /tmp/tmp24og0o5e.mp3
+ERROR 2026-07-13 08:33:02,150 metadata 30234 140613989968832 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:33:02,151 metadata 30234 140613989968832 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:34:07,427 engine 30338 140539494459072 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=dQw4w9WgXcQ
+INFO 2026-07-13 08:34:26,525 engine 30338 140539483969216 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/8090e9af-2a9e-42ec-8c29-10e043da5cc5/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://www.youtube.com/watch?v=dQw4w9WgXcQ
+ERROR 2026-07-13 08:34:38,474 engine 30338 140539483969216 Download execution error: Download terminated with return code 1
+INFO 2026-07-13 08:34:53,507 engine 30338 140539467183808 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/8090e9af-2a9e-42ec-8c29-10e043da5cc5/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://www.youtube.com/watch?v=dQw4w9WgXcQ
+INFO 2026-07-13 08:36:27,262 engine 30338 140539475576512 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 08:36:33,856 engine 30338 140539494459072 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/42c7165e-331a-4b37-a1c1-2e7d1e6f3034/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 08:39:00,064 engine 30338 140539483969216 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 08:39:11,172 engine 30338 140539458791104 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/fce0add7-43b9-4c34-97ec-221508ca6fbf/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 08:41:02,956 engine 30338 140539114550976 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 08:41:13,529 engine 30338 140539475576512 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/f0cc4782-e420-4617-be3a-30419aa5f1a6/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+ERROR 2026-07-13 08:45:01,052 engine 30338 140539494459072 Download execution error: Download terminated with return code 1
+INFO 2026-07-13 08:45:16,077 engine 30338 140539467183808 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/42c7165e-331a-4b37-a1c1-2e7d1e6f3034/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+ERROR 2026-07-13 08:47:00,879 engine 30338 140539458791104 Download execution error: Download terminated with return code 1
+INFO 2026-07-13 08:47:15,911 engine 30338 140539114550976 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/fce0add7-43b9-4c34-97ec-221508ca6fbf/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+ERROR 2026-07-13 08:48:26,223 engine 30338 140539475576512 Download execution error: Download terminated with return code 1
+INFO 2026-07-13 08:48:41,240 engine 30338 140539106158272 Executing download command: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/f0cc4782-e420-4617-be3a-30419aa5f1a6/%(title)s.%(ext)s --newline --no-warnings --verbose -f bestvideo[height<=720]+bestaudio/best --merge-output-format mp4 --retries 3 --concurrent-fragments 5 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+ERROR 2026-07-13 08:49:15,506 engine 30338 140539106158272 Download execution error: Download terminated with return code 1
+INFO 2026-07-13 08:51:06,292 engine 35766 140650233424832 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 08:51:06,293 engine 35766 140650233424832 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 08:51:06,293 engine 35766 140650233424832 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 08:51:06,293 engine 35766 140650233424832 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 08:51:06,299 metadata 35766 140650233424832 Successfully embedded metadata into /tmp/tmpen0kyzsa.mp3
+ERROR 2026-07-13 08:51:06,300 metadata 35766 140650233424832 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 08:51:06,300 metadata 35766 140650233424832 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 08:52:21,456 engine 35685 139834028443328 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 09:32:31,226 engine 6649 140579580623808 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 09:32:31,227 engine 6649 140579580623808 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 09:32:31,227 engine 6649 140579580623808 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 09:32:31,229 engine 6649 140579580623808 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 09:32:31,237 metadata 6649 140579580623808 Successfully embedded metadata into /tmp/tmpramkqz7e.mp3
+ERROR 2026-07-13 09:32:31,238 metadata 6649 140579580623808 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 09:32:31,240 metadata 6649 140579580623808 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 09:33:02,853 engine 6693 140450165636032 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 09:33:02,853 engine 6693 140450165636032 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 09:33:02,853 engine 6693 140450165636032 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 09:33:02,854 engine 6693 140450165636032 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 09:33:02,861 metadata 6693 140450165636032 Successfully embedded metadata into /tmp/tmpyvnt9xvz.mp3
+ERROR 2026-07-13 09:33:02,862 metadata 6693 140450165636032 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 09:33:02,863 metadata 6693 140450165636032 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 09:41:52,331 engine 7604 139822275603392 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 09:41:52,331 engine 7604 139822275603392 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 09:41:52,332 engine 7604 139822275603392 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 09:41:52,338 engine 7604 139822275603392 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 09:41:52,345 metadata 7604 139822275603392 Successfully embedded metadata into /tmp/tmpqetx1h6e.mp3
+ERROR 2026-07-13 09:41:52,346 metadata 7604 139822275603392 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 09:41:52,347 metadata 7604 139822275603392 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 09:43:31,459 engine 7684 140014118554560 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 09:43:31,459 engine 7684 140014118554560 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 09:43:31,459 engine 7684 140014118554560 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 09:43:31,460 engine 7684 140014118554560 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 09:43:31,465 metadata 7684 140014118554560 Successfully embedded metadata into /tmp/tmpxhl6617k.mp3
+ERROR 2026-07-13 09:43:31,466 metadata 7684 140014118554560 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 09:43:31,467 metadata 7684 140014118554560 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 09:45:41,718 engine 7776 139647391910848 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 09:45:41,718 engine 7776 139647391910848 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 09:45:41,718 engine 7776 139647391910848 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 09:45:41,719 engine 7776 139647391910848 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 09:45:41,724 metadata 7776 139647391910848 Successfully embedded metadata into /tmp/tmps5s96g3k.mp3
+ERROR 2026-07-13 09:45:41,725 metadata 7776 139647391910848 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 09:45:41,726 metadata 7776 139647391910848 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 09:52:31,021 engine 8571 140241719654080 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 09:53:06,890 engine 8571 140241698866880 [Job 2a9cad36-5653-4772-bb53-cb29261e616f] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/2a9cad36-5653-4772-bb53-cb29261e616f/%(title)s.%(ext)s --newline --no-warnings -f 160+bestaudio/best[height<=1080]/best --merge-output-format mp4 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+ERROR 2026-07-13 09:55:43,365 engine 8571 140241698866880 [Job 2a9cad36-5653-4772-bb53-cb29261e616f] Download error: yt-dlp terminated with return code 1
+INFO 2026-07-13 09:55:58,401 engine 8571 140241478346432 [Job 2a9cad36-5653-4772-bb53-cb29261e616f] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/2a9cad36-5653-4772-bb53-cb29261e616f/%(title)s.%(ext)s --newline --no-warnings -f 160+bestaudio/best[height<=1080]/best --merge-output-format mp4 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 09:56:04,368 engine 8571 140241469953728 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 09:56:13,979 engine 8571 140241698866880 [Job c843ac1c-e31a-4863-803c-2b1c531413c7] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/c843ac1c-e31a-4863-803c-2b1c531413c7/%(title)s.%(ext)s --newline --no-warnings -f 160+bestaudio/best[height<=1080]/best --merge-output-format mp4 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 09:57:12,503 engine 8571 140241698866880 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:01:18,297 engine 8571 140241698866880 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:01:31,050 engine 8571 140241469953728 [Job 3d5e1f94-edae-4e22-8fa6-957e058d5b59] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/3d5e1f94-edae-4e22-8fa6-957e058d5b59/%(title)s.%(ext)s --newline --no-warnings -x --audio-format mp3 --audio-quality 0 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:01:47,635 metadata 8571 140241469953728 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/3d5e1f94-edae-4e22-8fa6-957e058d5b59/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 10:04:56,020 engine 8571 140241698866880 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:05:12,002 engine 8571 140241469953728 [Job cf1ff333-e0d7-430f-baff-49267bb893c7] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/cf1ff333-e0d7-430f-baff-49267bb893c7/%(title)s.%(ext)s --newline --no-warnings -x --audio-format mp3 --audio-quality 0 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:05:26,460 metadata 8571 140241469953728 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/cf1ff333-e0d7-430f-baff-49267bb893c7/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 10:05:36,835 engine 8571 140241698866880 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:06:40,236 engine 8571 140241469953728 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:07:59,137 engine 8571 140241469953728 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:08:15,147 engine 8571 140241698866880 [Job d01b881c-8921-4f5b-bbe9-6adec081cf80] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/d01b881c-8921-4f5b-bbe9-6adec081cf80/%(title)s.%(ext)s --newline --no-warnings -x --audio-format mp3 --audio-quality 0 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:08:32,436 metadata 8571 140241698866880 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/d01b881c-8921-4f5b-bbe9-6adec081cf80/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 10:08:38,419 engine 8571 140241698866880 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:20:10,462 engine 13731 140705937024704 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:20:46,526 engine 13731 140705917331136 [Job 70426cc0-2c72-4964-b599-374aeb6253ad] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/70426cc0-2c72-4964-b599-374aeb6253ad/%(title)s.%(ext)s --newline --no-warnings -x --audio-format mp3 --audio-quality 0 --embed-metadata --concurrent-fragments 5 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:21:03,336 metadata 13731 140705917331136 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/70426cc0-2c72-4964-b599-374aeb6253ad/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 10:21:04,788 engine 13731 140705900545728 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:35:57,640 engine 16130 140549897817024 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 10:35:57,641 engine 16130 140549897817024 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 10:35:57,641 engine 16130 140549897817024 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 10:35:57,642 engine 16130 140549897817024 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 10:35:57,646 metadata 16130 140549897817024 Successfully embedded metadata into /tmp/tmprn0uuyor.mp3
+ERROR 2026-07-13 10:35:57,646 metadata 16130 140549897817024 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 10:35:57,647 metadata 16130 140549897817024 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 10:37:21,303 engine 16244 139804049152960 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 10:37:21,303 engine 16244 139804049152960 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 10:37:21,303 engine 16244 139804049152960 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 10:37:21,304 engine 16244 139804049152960 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 10:37:21,308 metadata 16244 139804049152960 Successfully embedded metadata into /tmp/tmpvye7hdsi.mp3
+ERROR 2026-07-13 10:37:21,309 metadata 16244 139804049152960 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 10:37:21,309 metadata 16244 139804049152960 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 10:41:21,349 engine 16179 140294383716032 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:42:13,402 engine 16179 140294383716032 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:44:42,615 engine 16179 140294166148800 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:47:01,376 engine 17462 139738129876672 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:48:22,167 engine 17462 139738129876672 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:48:43,742 engine 17462 139738129876672 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:53:48,184 engine 17462 139738129876672 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:54:02,784 engine 17462 139738111588032 [Job 88c60979-f348-444e-83ab-69d8bebdf465] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/88c60979-f348-444e-83ab-69d8bebdf465/%(title)s.%(ext)s --newline --no-warnings -f 139 -x --audio-format mp3 --audio-quality 0 --write-thumbnail --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 10:54:38,756 metadata 17462 139738111588032 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/88c60979-f348-444e-83ab-69d8bebdf465/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 11:02:31,327 engine 18918 140635257703360 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:02:31,327 engine 18918 140635257703360 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:02:31,328 engine 18918 140635257703360 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:02:31,328 engine 18918 140635257703360 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:02:31,332 metadata 18918 140635257703360 Successfully embedded metadata into /tmp/tmpaa09_hf1.mp3
+ERROR 2026-07-13 11:02:31,332 metadata 18918 140635257703360 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:02:31,333 metadata 18918 140635257703360 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:13:11,477 engine 19500 139711418031040 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:13:11,477 engine 19500 139711418031040 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:13:11,477 engine 19500 139711418031040 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:13:11,478 engine 19500 139711418031040 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:13:11,481 metadata 19500 139711418031040 Successfully embedded metadata into /tmp/tmptkymon_w.mp3
+ERROR 2026-07-13 11:13:11,482 metadata 19500 139711418031040 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:13:11,482 metadata 19500 139711418031040 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:13:26,474 engine 19524 139701592546240 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:13:26,474 engine 19524 139701592546240 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:13:26,474 engine 19524 139701592546240 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:13:26,475 engine 19524 139701592546240 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:13:26,479 metadata 19524 139701592546240 Successfully embedded metadata into /tmp/tmpylkejkv7.mp3
+ERROR 2026-07-13 11:13:26,480 metadata 19524 139701592546240 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:13:26,481 metadata 19524 139701592546240 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:14:04,335 engine 19603 139964420787136 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:14:04,336 engine 19603 139964420787136 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:14:04,336 engine 19603 139964420787136 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:14:04,336 engine 19603 139964420787136 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:14:04,340 metadata 19603 139964420787136 Successfully embedded metadata into /tmp/tmp0qsea441.mp3
+ERROR 2026-07-13 11:14:04,341 metadata 19603 139964420787136 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:14:04,341 metadata 19603 139964420787136 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:16:44,531 engine 19776 139644464184256 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:16:44,531 engine 19776 139644464184256 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:16:44,531 engine 19776 139644464184256 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:16:44,532 engine 19776 139644464184256 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:16:44,536 metadata 19776 139644464184256 Successfully embedded metadata into /tmp/tmp4r29c37u.mp3
+ERROR 2026-07-13 11:16:44,536 metadata 19776 139644464184256 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:16:44,537 metadata 19776 139644464184256 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:18:05,210 engine 19836 139979799391168 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 11:18:05,210 engine 19836 139979799391168 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 11:18:05,210 engine 19836 139979799391168 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 11:18:05,211 engine 19836 139979799391168 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 11:18:05,215 metadata 19836 139979799391168 Successfully embedded metadata into /tmp/tmppizj94ub.mp3
+ERROR 2026-07-13 11:18:05,215 metadata 19836 139979799391168 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 11:18:05,216 metadata 19836 139979799391168 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 11:22:08,171 engine 19689 139977061037760 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:25:30,917 engine 19689 139977061037760 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:25:44,285 engine 19689 139977044256448 [Job 7d84dd9e-d9c5-4d6f-bd89-40a0a99b3528] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/7d84dd9e-d9c5-4d6f-bd89-40a0a99b3528/%(title)s.%(ext)s --newline --no-warnings -f 139 -x --audio-format mp3 --audio-quality 0 --write-thumbnail --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:26:22,726 metadata 19689 139977044256448 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/7d84dd9e-d9c5-4d6f-bd89-40a0a99b3528/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 11:32:20,612 engine 19689 139977044256448 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:45:26,168 engine 23680 139939997533888 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:48:45,285 engine 23680 139939997533888 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:52:07,544 engine 23680 139939997533888 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:52:19,123 engine 23680 139939979273920 [Job e58a5505-4103-4b3e-89fe-2d23e60709d9] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/e58a5505-4103-4b3e-89fe-2d23e60709d9/%(title)s.%(ext)s --newline --no-warnings -f 139 -x --audio-format mp3 --audio-quality 0 --write-thumbnail --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 11:52:51,951 metadata 23680 139939979273920 Successfully embedded metadata into /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/e58a5505-4103-4b3e-89fe-2d23e60709d9/Helen Meles - Fkri Hamime - ፍቅሪ ሓሚመ - Eritrean Music ( Official Audio ).mp3
+INFO 2026-07-13 12:07:49,602 apps 25666 139825115225024 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:08:12,293 apps 25718 139877340879808 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:10:21,609 apps 25847 139769087871936 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:10:49,046 apps 25882 140137934793664 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:10:49,946 engine 25882 140137934793664 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 12:10:49,946 engine 25882 140137934793664 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 12:10:49,946 engine 25882 140137934793664 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 12:10:49,948 engine 25882 140137934793664 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 12:10:49,957 metadata 25882 140137934793664 Successfully embedded metadata into /tmp/tmp96pg1tmq.mp3
+ERROR 2026-07-13 12:10:49,958 metadata 25882 140137934793664 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 12:10:49,959 metadata 25882 140137934793664 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 12:11:07,662 apps 25909 139876898380736 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:11:25,562 apps 25957 140606333774784 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:11:26,502 engine 25957 140606333774784 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 12:11:26,503 engine 25957 140606333774784 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 12:11:26,503 engine 25957 140606333774784 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 12:11:26,504 engine 25957 140606333774784 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 12:11:26,512 metadata 25957 140606333774784 Successfully embedded metadata into /tmp/tmpxgkj80gl.mp3
+ERROR 2026-07-13 12:11:26,512 metadata 25957 140606333774784 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 12:11:26,513 metadata 25957 140606333774784 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 12:12:03,632 apps 26013 140430208588736 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:12:04,588 engine 26013 140430208588736 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 12:12:04,588 engine 26013 140430208588736 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 12:12:04,588 engine 26013 140430208588736 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 12:12:04,590 engine 26013 140430208588736 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 12:12:04,597 metadata 26013 140430208588736 Successfully embedded metadata into /tmp/tmpznhptgs9.mp3
+ERROR 2026-07-13 12:12:04,598 metadata 26013 140430208588736 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 12:12:04,599 metadata 26013 140430208588736 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 12:16:11,544 engine 25909 139876473235136 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 12:16:51,363 engine 25909 139876473235136 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 12:16:54,208 engine 25909 139876481627840 [Job 47b0a22b-8b3a-479c-a5b2-d595f163f500] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/47b0a22b-8b3a-479c-a5b2-d595f163f500/media.%(ext)s --newline --no-warnings -f 394 --merge-output-format mp4 --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 12:20:49,253 apps 26638 140676793396160 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:22:10,303 apps 26740 140473198447552 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:22:41,631 apps 26774 140648441912256 [Scheduler] Stateless temp file cleanup scheduler started (5m interval).
+INFO 2026-07-13 12:22:42,594 engine 26774 140648441912256 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://bad-url.invalid
+ERROR 2026-07-13 12:22:42,594 engine 26774 140648441912256 yt-dlp analyze failed: ERROR: Unsupported URL
+ERROR 2026-07-13 12:22:42,595 engine 26774 140648441912256 Error analyzing URL https://bad-url.invalid: yt-dlp extraction failed: ERROR: Unsupported URL
+INFO 2026-07-13 12:22:42,596 engine 26774 140648441912256 Running analyze cmd: yt-dlp --dump-json --no-playlist --flat-playlist --socket-timeout 10 https://www.youtube.com/watch?v=test
+INFO 2026-07-13 12:22:42,602 metadata 26774 140648441912256 Successfully embedded metadata into /tmp/tmplhc87gq6.mp3
+ERROR 2026-07-13 12:22:42,603 metadata 26774 140648441912256 Target media file not found for embedding: /nonexistent/path/file.mp3
+WARNING 2026-07-13 12:22:42,604 metadata 26774 140648441912256 Metadata embedding not supported for extension: .avi
+INFO 2026-07-13 12:24:23,644 engine 26638 140676366853824 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 12:24:53,613 engine 26638 140676366853824 Extracting info (Python API) for URL: https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
+INFO 2026-07-13 12:24:56,074 engine 26638 140676375246528 [Job 5d523777-beed-4571-8cfa-21d33287874e] Executing: yt-dlp -o /run/media/zrex/Local Disk/Coding/ZFetchBackend/media/temp/5d523777-beed-4571-8cfa-21d33287874e/media.%(ext)s --newline --no-warnings -f 394 --merge-output-format mp4 --embed-metadata --embed-thumbnail --concurrent-fragments 16 --retries 3 https://youtu.be/S9g4HY9BbEY?si=TW_QqyBuBeDfEZch
